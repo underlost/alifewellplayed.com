@@ -1,0 +1,21 @@
+// Colors
+$black: #03080F;
+$latte: #FBF7EE;
+$blue: #99E2E7;
+$green: #A3B8A6;
+$yellow: #FFDA65;
+$orange: #FD6707;
+$purple: #E1BED8;
+
+// Set colors for components
+$primary: $black;
+
+// Fonts
+$font-family-proxima: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-titling-gothic: titling-gothic-fb-wide, 'titling-gothic-fb-wide', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-family-sans-serif: $font-family-proxima;
+$font-size-base: 1.15rem;
+
+$headings-font-family: $font-family-titling-gothic;
+$headings-font-weight: 700;
