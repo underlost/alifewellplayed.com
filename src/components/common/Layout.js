@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Fade from 'react-reveal/Fade';
-import SvgLogo from './logo'
-
+import Fade from 'react-reveal/Fade'
+import SvgLogo from './Logo'
 import { Navigation } from '.'
 import config from '../../utils/siteConfig'
 

@@ -44,9 +44,7 @@ const Author = ({ data, location, pageContext }) => {
                 )}
               </div>
             </div>
-            <div className="author-header-image">
-              {author.profile_image && <img src={author.profile_image} alt={author.name} />}
-            </div>
+            <div className="author-header-image">{author.profile_image && <img src={author.profile_image} alt={author.name} />}</div>
           </header>
           <section className="post-feed">
             {posts.map(({ node }) => (
@@ -88,12 +86,7 @@ export const pageQuery = graphql`
     ghostAuthor(slug: { eq: $slug }) {
       ...GhostAuthorFields
     }
-    allGhostPost(
-      sort: { order: DESC, fields: [published_at] }
-      filter: { authors: { elemMatch: { slug: { eq: $slug } } } }
-      limit: $limit
-      skip: $skip
-    ) {
+    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { authors: { elemMatch: { slug: { eq: $slug } } } }, limit: $limit, skip: $skip) {
       edges {
         node {
           ...GhostPostFields

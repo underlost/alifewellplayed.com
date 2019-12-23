@@ -1,42 +1,49 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-
-import { Layout, PostCard, Pagination } from '../components/common'
+import { Layout, PostItem } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
- * Main index page (home page)
+ * Archive Page
  *
- * Loads all posts from Ghost and uses pagination to navigate through them.
- * The number of posts that should appear per page can be setup
- * in /utils/siteConfig.js under `postsPerPage`.
+ * Loads all posts from Ghost and displays them as an archibe.
+ * Optional Text and title are displayed from the archiive page in Ghost.
  *
  */
-const Index = ({ data, location, pageContext }) => {
+const ArchivePage = ({ data, location }) => {
   const posts = data.allGhostPost.edges
+  const page = page.ghostPage
 
   return (
     <>
       <MetaData location={location} />
       <Layout isHome={true}>
         <div className="container px-0">
+          <h1 className="content-title h1 text-uppercase">{page.title}</h1>
           <section className="post-feed">
             {posts.map(({ node }) => (
               // The tag below includes the markup for each post - components/common/PostCard.js
-              <PostCard key={node.id} post={node} />
+              <PostItem key={node.id} post={node} />
             ))}
           </section>
-          <Pagination pageContext={pageContext} />
         </div>
       </Layout>
     </>
   )
 }
 
-Index.propTypes = {
+ArchivePage.propTypes = {
   data: PropTypes.shape({
     allGhostPost: PropTypes.object.isRequired,
+  }).isRequired,
+  page: PropTypes.shape({
+    ghostPage: PropTypes.shape({
+      codeinjection_styles: PropTypes.object,
+      title: PropTypes.string.isRequired,
+      html: PropTypes.string.isRequired,
+      feature_image: PropTypes.string,
+    }).isRequired,
   }).isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
@@ -44,13 +51,15 @@ Index.propTypes = {
   pageContext: PropTypes.object,
 }
 
-export default Index
+export default ArchivePage
 
 // This page query loads all posts sorted descending by published date
-// The `limit` and `skip` values are used for pagination
 export const pageQuery = graphql`
-  query GhostPostQuery($limit: Int!, $skip: Int!) {
-    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: $limit, skip: $skip) {
+  query GhostArchiveQuery {
+    ghostPage(slug: { eq: "archive" }) {
+      ...GhostPageFields
+    }
+    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }) {
       edges {
         node {
           ...GhostPostFields

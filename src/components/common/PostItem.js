@@ -7,7 +7,7 @@ import { Remarkable } from 'remarkable'
 
 const md = new Remarkable()
 
-const PostCard = ({ post }) => {
+const PostItem = ({ post }) => {
   const url = `/${post.slug}/`
   const readingTime = readingTimeHelper(post)
   const postExcept = md.render(post.excerpt)
@@ -42,7 +42,7 @@ const PostCard = ({ post }) => {
   )
 }
 
-PostCard.propTypes = {
+PostItem.propTypes = {
   post: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -62,4 +62,4 @@ PostCard.propTypes = {
   }).isRequired,
 }
 
-export default PostCard
+export default PostItem
