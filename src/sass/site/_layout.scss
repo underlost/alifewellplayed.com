@@ -5,6 +5,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid $green;
+  padding-left: 1.5rem;
+}
+
 .site-nav-icon {
     height: 15px;
     margin: -5px 0 0;
@@ -17,6 +24,6 @@
 .site-main {
   background-color: $latte;
   width: 100%;
-  max-width: 600px;
-  overflow-y: hidden;
+  max-width: $siteWidth;
+  //overflow-y: hidden;
 }

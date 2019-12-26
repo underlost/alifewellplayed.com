@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import ReadFirstBlock from '../components/ReadFirstBlock'
 
 /**
  * Main index page (home page)
@@ -18,9 +18,10 @@ const Index = ({ data, location, pageContext }) => {
 
   return (
     <>
-      <MetaData location={location} />
+      <MetaData data={data} location={location} type="website" title={`A Life Well Played`} isHome={true} />
       <Layout isHome={true}>
         <div className="container px-0">
+          {pageContext.humanPageNumber === 1 && <ReadFirstBlock />}
           <section className="post-feed">
             {posts.map(({ node }) => (
               // The tag below includes the markup for each post - components/common/PostCard.js
@@ -50,7 +51,11 @@ export default Index
 // The `limit` and `skip` values are used for pagination
 export const pageQuery = graphql`
   query GhostPostQuery($limit: Int!, $skip: Int!) {
-    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: $limit, skip: $skip) {
+    allGhostPost(
+      sort: { order: DESC, fields: [published_at] },
+      filter: { tags: { elemMatch: { name: { eq: "#blog" } } } },
+      limit: $limit,
+      skip: $skip) {
       edges {
         node {
           ...GhostPostFields

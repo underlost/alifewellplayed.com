@@ -13,14 +13,15 @@ import { MetaData } from '../components/common/meta'
  */
 const ArchivePage = ({ data, location }) => {
   const posts = data.allGhostPost.edges
-  const page = page.ghostPage
+  const page = data.ghostPage
 
   return (
     <>
       <MetaData location={location} />
-      <Layout isHome={true}>
+      <Layout>
         <div className="container px-0">
           <h1 className="content-title h1 text-uppercase">{page.title}</h1>
+          <section className="content-body load-external-scripts mb-5" dangerouslySetInnerHTML={{ __html: page.html }} />
           <section className="post-feed">
             {posts.map(({ node }) => (
               // The tag below includes the markup for each post - components/common/PostCard.js
@@ -36,8 +37,6 @@ const ArchivePage = ({ data, location }) => {
 ArchivePage.propTypes = {
   data: PropTypes.shape({
     allGhostPost: PropTypes.object.isRequired,
-  }).isRequired,
-  page: PropTypes.shape({
     ghostPage: PropTypes.shape({
       codeinjection_styles: PropTypes.object,
       title: PropTypes.string.isRequired,
@@ -59,7 +58,9 @@ export const pageQuery = graphql`
     ghostPage(slug: { eq: "archive" }) {
       ...GhostPageFields
     }
-    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }) {
+    allGhostPost(
+      sort: { order: DESC, fields: [published_at] },
+      filter: { tags: { elemMatch: { name: { eq: "#featured" } } } }) {
       edges {
         node {
           ...GhostPostFields

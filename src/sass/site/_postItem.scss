@@ -1,0 +1,13 @@
+.post-item {
+  position: relative;
+}
+.post-item ~ .post-item {
+  &::before {
+    margin-bottom: 0.5rem;
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: darken($color: $latte, $amount: 15%);
+  }
+}

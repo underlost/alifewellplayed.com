@@ -22,9 +22,9 @@ const Author = ({ data, location, pageContext }) => {
       <MetaData data={data} location={location} type="profile" />
       <Layout>
         <div className="container">
-          <header className="author-header">
-            <div className="author-header-content">
-              <h1>{author.name}</h1>
+          <header className="author-header row">
+            <div className="author-header-content col-md-8">
+              <h1 className="h2 text-uppercase">{author.name}</h1>
               {author.bio && <p>{author.bio}</p>}
               <div className="author-header-meta">
                 {author.website && (
@@ -44,7 +44,9 @@ const Author = ({ data, location, pageContext }) => {
                 )}
               </div>
             </div>
-            <div className="author-header-image">{author.profile_image && <img src={author.profile_image} alt={author.name} />}</div>
+            <div className="col-md-4">
+              <div className="author-header-image">{author.profile_image && <img className="w-100" src={author.profile_image} alt={author.name} />}</div>
+            </div>
           </header>
           <section className="post-feed">
             {posts.map(({ node }) => (
@@ -86,7 +88,15 @@ export const pageQuery = graphql`
     ghostAuthor(slug: { eq: $slug }) {
       ...GhostAuthorFields
     }
-    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { authors: { elemMatch: { slug: { eq: $slug } } } }, limit: $limit, skip: $skip) {
+    allGhostPost(
+      sort: { order: DESC, fields: [published_at] },
+      filter: { 
+        authors: { elemMatch: { slug: { eq: $slug } } },
+        tags: { elemMatch: { name: {eq: "#blog"} } }
+      },
+      limit: $limit,
+      skip: $skip
+    ) {
       edges {
         node {
           ...GhostPostFields

@@ -10,12 +10,15 @@ $purple: #E1BED8;
 // Set colors for components
 $primary: $black;
 
+$siteWidth: 640px;
+
 // Fonts
 $font-family-proxima: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-titling-gothic: titling-gothic-fb-wide, 'titling-gothic-fb-wide', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+//$font-family-titling-gothic: titling-gothic-fb-wide, 'titling-gothic-fb-wide', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-freight-sans: freight-sans-pro, Arial, "Noto Sans", sans-serif,;
 
 $font-family-sans-serif: $font-family-proxima;
 $font-size-base: 1.15rem;
 
-$headings-font-family: $font-family-titling-gothic;
-$headings-font-weight: 700;
+$headings-font-family: $font-family-freight-sans;
+$headings-font-weight: 900;

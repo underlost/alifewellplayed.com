@@ -1,0 +1,44 @@
+.kg-bookmark-container {
+
+  .kg-bookmark-title {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    font-weight: bold;
+  }
+
+  .kg-bookmark-metadata {
+    font-family: $headings-font-family;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  .kg-bookmark-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+
+  .kg-bookmark-publisher {
+    overflow: hidden;
+    max-width: 240px;
+    white-space: nowrap;
+    display: block;
+    line-height: 1.65em;
+  }
+
+  .kg-bookmark-description {
+    @extend .sr-only;
+  }
+  .kg-bookmark-thumbnail {
+    @extend .sr-only;
+    img {
+      width: 100%;
+    }
+  }
+}

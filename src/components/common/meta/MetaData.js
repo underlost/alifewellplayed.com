@@ -7,6 +7,7 @@ import config from '../../../utils/siteConfig'
 import ArticleMeta from './ArticleMeta'
 import WebsiteMeta from './WebsiteMeta'
 import AuthorMeta from './AuthorMeta'
+import HomepageMeta from './HomepageMeta'
 
 /**
 * MetaData will generate all relevant meta data information incl.
@@ -20,12 +21,23 @@ const MetaData = ({
   description,
   image,
   location,
+  isHome,
 }) => {
   const canonical = url.resolve(config.siteUrl, location.pathname)
   const { ghostPost, ghostTag, ghostAuthor, ghostPage } = data
   settings = settings.allGhostSettings.edges[0].node
-
-  if (ghostPost) {
+  if (isHome){
+    return (
+      <HomepageMeta
+        data={{}}
+        canonical={canonical}
+        title={title}
+        description={description}
+        image={image}
+        type="WebSite"
+      />
+    )
+  } else if (ghostPost) {
     return (
       <ArticleMeta
         data={ghostPost}
@@ -77,6 +89,7 @@ const MetaData = ({
 
 MetaData.defaultProps = {
   data: {},
+  isHome: false,
 }
 
 MetaData.propTypes = {
@@ -95,6 +108,7 @@ MetaData.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
+  isHome: PropTypes.bool,
 }
 
 const MetaDataQuery = props => (

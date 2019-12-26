@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Fade from 'react-reveal/Fade'
-import SvgLogo from './Logo'
+import SvgLogo from '../Logo'
 import { Navigation } from '.'
 import config from '../../utils/siteConfig'
 
@@ -87,7 +87,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 </Link>
               </div>
               <div className="site-foot-nav-left">
-                <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                <Link to="/">{site.title}</Link> © 2019
               </div>
               <div className="site-foot-nav-right">
                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />

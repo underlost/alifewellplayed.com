@@ -18,7 +18,10 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
-            allGhostTag(sort: { order: ASC, fields: name }) {
+            allGhostTag(
+              sort: { order: ASC, fields: name },
+              filter: {visibility: {eq: "public"}}
+              ) {
                 edges {
                     node {
                         slug

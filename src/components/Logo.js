@@ -4,13 +4,7 @@ const SvgLogo = props => (
   <svg width={350.5} height={303} {...props}>
     <title>{`A Life Well Played, By Tyler Rilling`}</title>
     <g transform="translate(-529 -134)">
-      <circle
-        cx={41}
-        cy={41}
-        r={41}
-        fill="#9ae2e7"
-        transform="translate(529 355)"
-      />
+      <circle cx={41} cy={41} r={41} fill="#9ae2e7" transform="translate(529 355)" />
       <path fill="#ffda65" d="M579.5 412.5h300v10h-300z" />
       <path
         fill="#03080f"
