@@ -19,10 +19,10 @@ const Tag = ({ data, location, pageContext }) => {
     <>
       <MetaData data={data} location={location} type="series" />
       <Layout>
-        <div className="container">
+        <div className="container px-0">
           <header className="tag-header">
-            <h1>{tag.name}</h1>
-            {tag.description ? <p>{tag.description}</p> : null}
+            <h1 className="h2 mb-1">{tag.name}</h1>
+            {tag.description ? <p className="h6">{tag.description}</p> : null}
           </header>
           <section className="post-feed">
             {posts.map(({ node }) => (

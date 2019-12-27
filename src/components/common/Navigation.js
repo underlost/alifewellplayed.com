@@ -18,7 +18,7 @@ const Navigation = ({ data, navClass }) => (
       if (navItem.url.match(/^\s?http(s?)/gi)) {
         return <span className="site-nav-item-wrapper"><a className={navClass} href={navItem.url} key={i} target="_blank" rel="noopener noreferrer">{navItem.label}</a></span>
       } else {
-        return <span className="site-nav-item-wrapper"><Link className={navClass} to={navItem.url} key={i}>{navItem.label}</Link></span>
+        return <span className="site-nav-item-wrapper"><Link activeClassName={`active`} className={navClass} to={navItem.url} key={i}>{navItem.label}</Link></span>
       }
     })}
   </>

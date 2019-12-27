@@ -3,6 +3,24 @@
   .site-nav-item-wrapper {
     display: block;
     text-transform: uppercase;
+    font-size: .9rem;
+    padding: 3px 5px;
+  }
+  .site-nav-item {
+    position: relative;
+    &.active {
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -14px;
+        height: 100%;
+        width: 8px;
+        background-color: $green;
+      }
+    }
   }
   .site-brand {
     margin-left: -50px;

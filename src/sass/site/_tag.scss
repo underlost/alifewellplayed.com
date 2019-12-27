@@ -2,20 +2,28 @@
 /* ---------------------------------------------------------- */
 
 .tag-header {
-    max-width: 690px;
-    margin: 0 0 4vw;
-}
-
-.tag-header h1 {
-    margin: 0 0 1rem 0;
-}
-
-.tag-header p {
     margin: 0;
-    color: var(--color-secondary);
-    font-size: 2.2rem;
-    line-height: 1.3em;
+    position: relative;
+    h1 {
+      margin: 0 0 1rem 0;
+    }
+    
+    &::after {
+      content: '';
+      margin-right: 0;
+      margin-left: auto;
+      transform: translateX(90px);
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 60px;
+      width: 250px;
+      height: 72px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDgiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCAyNDggNzIiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMSIgeDI9IjAiIHkxPSIuNSIgeTI9Ii41IiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UxYmVkOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZDY3MDciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxwYXRoIGZpbGw9InVybCgjYSkiIGQ9Ik0wIDBoMjQ4djEwSDB6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDYyKSIvPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UxYmVkOCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2MykiPgogICAgPGNpcmNsZSBjeD0iMzEiIGN5PSIzMSIgcj0iMzEiIHN0cm9rZT0ibm9uZSIvPgogICAgPGNpcmNsZSBjeD0iMzEiIGN5PSIzMSIgcj0iMzAiLz4KICA8L2c+Cjwvc3ZnPgoK");
+    }
 }
+
 
 @media (max-width: 500px) {
     .tag-header {

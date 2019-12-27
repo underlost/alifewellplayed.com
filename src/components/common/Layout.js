@@ -50,7 +50,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                   { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
                   <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
 
-                  <nav className="site-nav text-md-right mb-4">
+                  <nav className="site-nav text-md-right mb-4 mr-md-3">
                     {/* The navigation items as setup in Ghost */}
                     <Navigation data={site.navigation} navClass="site-nav-item" />
                   </nav>

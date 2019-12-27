@@ -6,6 +6,7 @@ import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import dayjs from 'dayjs'
 
 /**
  * Single post view (/:slug)
@@ -16,6 +17,8 @@ import { MetaData } from '../components/common/meta'
 const Post = ({ data, location }) => {
   const post = data.ghostPost
   const readingTime = readingTimeHelper(post)
+  const publishedAt = dayjs(post.published_at).format(`MMM D, YYYY`)
+  const updatedAt = dayjs(post.updated_at).format(`MMM D, YYYY`)
 
   return (
     <>
@@ -28,25 +31,24 @@ const Post = ({ data, location }) => {
           <article className="content">
             {post.feature_image ? (
               <figure className="post-feature-image">
-                <img src={post.feature_image} alt={post.title} />
+                <img className="w-100" src={post.feature_image} alt={post.title} />
               </figure>
             ) : null}
             <header>
-              <p className="h6 text-uppercase text-green">{readingTime}</p>
-              <h1 className="content-title h2">{post.title}</h1>
+              <p className="h6 text-uppercase text-green d-inline-block mb-1 pr-2">{readingTime}</p>
+              {post.tags && <div className="post-byline-item post-card-tags h6 text-uppercase mb-1 d-inline-block"> in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} /></div>}
+              <h1 className="content-title h2 mb-1">{post.title}</h1>
+              <time className="post-byline-item d-block h6 text-uppercase mb-4" dateTime={post.published_at}><span className="sr-only">Published on </span>{publishedAt}</time>
+
             </header>
-            <section className="post-full-content">
-              {/* The main post content */}
-              <section className="content-body load-external-scripts" dangerouslySetInnerHTML={{ __html: post.html }} />
-            </section>
+            {/* The main post content */}
+            <section className="content-body load-external-scripts mb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
             <footer className="post-footer row no-gutters">
-              <div className="post-card-footer-left col-6">
-                {post.tags && <div className="post-card-tags h6 text-uppercase mb-1"> <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} /></div>}
-                <small className="h6 text-uppercase d-block">By: { post.primary_author.name }</small>
+              <div className="post-card-footer-right col-12">
+                <small className="post-byline-item h6 text-uppercase d-block sr-only">By: { post.primary_author.name }</small>
+                <time className="post-byline-item d-block h6 text-uppercase sr-only" dateTime={post.updated_at}>Last Updated: {updatedAt}</time>
               </div>
-              <div className="post-card-footer-right col-6">
-                
-              </div>
+              
             </footer>
           </article>
         </div>
@@ -62,6 +64,9 @@ Post.propTypes = {
       title: PropTypes.string.isRequired,
       html: PropTypes.string.isRequired,
       feature_image: PropTypes.string,
+      published_at: PropTypes.string,
+      updated_at: PropTypes.string,
+      primary_author: PropTypes.object,
       tags: PropTypes.arrayOf(
         PropTypes.shape({
           name: PropTypes.string,

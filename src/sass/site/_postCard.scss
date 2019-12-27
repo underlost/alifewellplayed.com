@@ -27,7 +27,9 @@
   .post-card-link {
     position: relative;
     text-decoration: underline;
-    &::after {
+    overflow: hidden;
+    &::after,
+    &::before {
       content: '';
       position: absolute;
       z-index: 1;
@@ -36,16 +38,30 @@
       height: 15px;
       width: 100%;
       max-width: 450px;
+    }
+    &::after {
       background-color: $blue;
+    }
+    &::before {
+      background-color: $yellow;
+      transform: translateX(100%);
+      z-index: 5;
+      transition: ease all .5s;
+    }
+    &:hover {
+      &::before {
+        transform: translateX(0);
+      }
     }
   }
   
 }
 
 .post-card-tags {
-  font-size: .75rem;
-  line-height: 1.4;
   color: $green;
+  a {
+    color: $green;
+  }
 }
 
 .post-card-title {

@@ -16,17 +16,14 @@
   }
 }
 
-.post-full-content {
-  
-  .content-body {
-    a {
-      border-bottom: 2px solid darken($color: $latte, $amount: 40%);
-      position: relative;
-      &:hover {
-        text-decoration: none;
-        color: $green;
-        border-color: $green;
-      }
+.content-body {
+  a {
+    border-bottom: 2px solid darken($color: $latte, $amount: 40%);
+    position: relative;
+    &:hover {
+      text-decoration: none;
+      color: $green;
+      border-color: $green;
     }
   }
 }
