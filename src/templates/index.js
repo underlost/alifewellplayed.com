@@ -51,11 +51,7 @@ export default Index
 // The `limit` and `skip` values are used for pagination
 export const pageQuery = graphql`
   query GhostPostQuery($limit: Int!, $skip: Int!) {
-    allGhostPost(
-      sort: { order: DESC, fields: [published_at] },
-      filter: { tags: { elemMatch: { name: { eq: "#blog" } } } },
-      limit: $limit,
-      skip: $skip) {
+    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#blog" } } } }, limit: $limit, skip: $skip) {
       edges {
         node {
           ...GhostPostFields

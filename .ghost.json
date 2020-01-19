@@ -1,10 +1,10 @@
 {
   "development": {
-    "apiUrl": "https://cms.alifewellplayed.com",
-    "contentApiKey": "5d7354e6304a1f28d15a5f560a"
+    "apiUrl": "https://secure.alifewellplayed.com",
+    "contentApiKey": "de3e390ecbad936979466c45fa"
   },
   "production": {
-    "apiUrl": "https://cms.alifewellplayed.com",
-    "contentApiKey": "5d7354e6304a1f28d15a5f560a"
+    "apiUrl": "https://secure.alifewellplayed.com",
+    "contentApiKey": "de3e390ecbad936979466c45fa"
   }
 }

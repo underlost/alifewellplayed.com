@@ -17,7 +17,7 @@ const ArchivePage = ({ data, location }) => {
 
   return (
     <>
-      <MetaData location={location} />
+      <MetaData data={data} location={location} type="website" />
       <Layout>
         <div className="container px-0">
           <h1 className="content-title h1 text-uppercase">{page.title}</h1>
@@ -58,9 +58,7 @@ export const pageQuery = graphql`
     ghostPage(slug: { eq: "archive" }) {
       ...GhostPageFields
     }
-    allGhostPost(
-      sort: { order: DESC, fields: [published_at] },
-      filter: { tags: { elemMatch: { name: { eq: "#featured" } } } }) {
+    allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: { elemMatch: { name: { eq: "#featured" } } } }) {
       edges {
         node {
           ...GhostPostFields

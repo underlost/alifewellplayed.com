@@ -59,17 +59,17 @@ export const pageQuery = graphql`
       ...GhostTagFields
     }
     allGhostPost(
-      sort: { order: DESC, fields: [published_at] },
-      filter: { 
+      sort: { order: DESC, fields: [published_at] }
+      filter: {
         tags: {
           elemMatch: {
-            slug: { eq: $slug },
+            slug: { eq: $slug }
             #name: {eq: "#blog"},
-          },
-        },
-      },
+          }
+        }
+      }
 
-      limit: $limit,
+      limit: $limit
       skip: $skip
     ) {
       edges {

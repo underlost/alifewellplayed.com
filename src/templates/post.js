@@ -36,19 +36,26 @@ const Post = ({ data, location }) => {
             ) : null}
             <header>
               <p className="h6 text-uppercase text-green d-inline-block mb-1 pr-2">{readingTime}</p>
-              {post.tags && <div className="post-byline-item post-card-tags h6 text-uppercase mb-1 d-inline-block"> in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} /></div>}
+              {post.tags && (
+                <div className="post-byline-item post-card-tags h6 text-uppercase mb-1 d-inline-block">
+                  in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} />
+                </div>
+              )}
               <h1 className="content-title h2 mb-1">{post.title}</h1>
-              <time className="post-byline-item d-block h6 text-uppercase mb-4" dateTime={post.published_at}><span className="sr-only">Published on </span>{publishedAt}</time>
-
+              <time className="post-byline-item d-block h6 text-uppercase mb-4" dateTime={post.published_at}>
+                <span className="sr-only">Published on </span>
+                {publishedAt}
+              </time>
             </header>
             {/* The main post content */}
             <section className="content-body load-external-scripts mb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
             <footer className="post-footer row no-gutters">
               <div className="post-card-footer-right col-12">
-                <small className="post-byline-item h6 text-uppercase d-block sr-only">By: { post.primary_author.name }</small>
-                <time className="post-byline-item d-block h6 text-uppercase sr-only" dateTime={post.updated_at}>Last Updated: {updatedAt}</time>
+                <small className="post-byline-item h6 text-uppercase d-block sr-only">By: {post.primary_author.name}</small>
+                <time className="post-byline-item d-block h6 text-uppercase sr-only" dateTime={post.updated_at}>
+                  Last Updated: {updatedAt}
+                </time>
               </div>
-              
             </footer>
           </article>
         </div>
