@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 import Fade from 'react-reveal/Fade'
 import SvgLogo from '../Logo'
 import { Navigation } from '.'
-import config from '../../utils/siteConfig'
+// import config from '../../utils/siteConfig'
 
 //CSS
 import '../../sass/site.scss'
@@ -46,14 +46,12 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                   </Fade>
                 </div>
                 <div className="site-mast-right col-md-4 align-self-end">
-                  { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                  { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                  <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
-
-                  <nav className="site-nav text-md-right mb-4 mr-md-3">
-                    {/* The navigation items as setup in Ghost */}
-                    <Navigation data={site.navigation} navClass="site-nav-item" />
-                  </nav>
+                  <Fade top>
+                    <nav className="site-nav text-md-right mb-4 mr-md-3">
+                      {/* The navigation items as setup in Ghost */}
+                      <Navigation data={site.navigation} navClass="site-nav-item" />
+                    </nav>
+                  </Fade>
                 </div>
               </div>
               { isHome ?
@@ -86,11 +84,13 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                   }
                 </Link>
               </div>
-              <div className="site-foot-nav-left">
-                <Link to="/">{site.title}</Link> © 2019
-              </div>
-              <div className="site-foot-nav-right">
+              <div className="site-foot-nav">
+                { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
+                { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+              </div>
+              <div className="site-foot-nav">
+                <Link to="/">{site.title}</Link> © 2019
               </div>
             </div>
           </footer>

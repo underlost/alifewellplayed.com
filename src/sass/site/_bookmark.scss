@@ -1,7 +1,40 @@
+.kg-bookmark-card {
+  width: 100%;
+  border: 1px solid darken($latte, 10%);
+}
 .kg-bookmark-container {
   padding: 2rem 0;
   display: block;
   border-width: 0 !important;
+  display: flex;
+
+  .kg-bookmark-content {
+    display: flex;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-basis: 100%;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  .kg-bookmark-thumbnail {
+    position: relative;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    min-width: 33%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 
   .kg-bookmark-title {
     font-family: $headings-font-family;
@@ -37,11 +70,5 @@
 
   .kg-bookmark-description {
     @extend .sr-only;
-  }
-  .kg-bookmark-thumbnail {
-    @extend .sr-only;
-    img {
-      width: 100%;
-    }
   }
 }

@@ -10,7 +10,7 @@
     "url": "git+https://github.com/underlost/alifewellplayed.com.git"
   },
   "resolutions": {
-    "sharp": "0.24.0"
+    "sharp": "0.23.4"
   },
   "engines": {
     "node": ">= 8.9.0"
@@ -42,10 +42,10 @@
     "eslint-plugin-ghost": "^1.0.0",
     "eslint-plugin-react": "^7.17.0",
     "jquery": "^3.4.1",
+    "node-sass": "^4.9.0",
     "popper.js": "^1.16.0",
     "prettier": "^1.19.1",
-    "sass": "^1.25.0",
-    "sharp": "^0.24.0",
+    "sharp": "^0.23.4",
     "typescript": ">=3.7.5",
     "webpack": "^4.41.4"
   },
@@ -54,8 +54,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.8.2",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@tryghost/helpers": "1.1.21",
-    "@tryghost/helpers-gatsby": "1.0.24",
+    "@tryghost/helpers": "^1.1.22",
+    "@tryghost/helpers-gatsby": "^1.0.25",
     "bootstrap": "^4.4.1",
     "cheerio": "1.0.0-rc.3",
     "dayjs": "^1.8.18",
