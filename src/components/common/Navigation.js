@@ -13,15 +13,15 @@ import { Link } from 'gatsby'
 *
 */
 const Navigation = ({ data, navClass }) => (
-  <>
+  <ul className={`list-inline`}>
     {data.map((navItem, i) => {
       if (navItem.url.match(/^\s?http(s?)/gi)) {
-        return <span className="site-nav-item-wrapper"><a className={navClass} href={navItem.url} key={i} target="_blank" rel="noopener noreferrer">{navItem.label}</a></span>
+        return <span className="site-nav-item-wrapper list-inline-item"><a className={navClass} href={navItem.url} key={i} target="_blank" rel="noopener noreferrer">{navItem.label}</a></span>
       } else {
-        return <span className="site-nav-item-wrapper"><Link activeClassName={`active`} className={navClass} to={navItem.url} key={i}>{navItem.label}</Link></span>
+        return <span className="site-nav-item-wrapper list-inline-item"><Link activeClassName={`active`} className={navClass} to={navItem.url} key={i}>{navItem.label}</Link></span>
       }
     })}
-  </>
+  </ul>
 )
 
 Navigation.defaultProps = {
