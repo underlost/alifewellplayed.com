@@ -90,6 +90,12 @@ blockquote {
     a {
       color: $green;
     }
+    .site-nav-item.active {
+      color: $black;
+    }
+    .site-nav-item.active::after {
+      display: none;
+    }
   }
 }
 

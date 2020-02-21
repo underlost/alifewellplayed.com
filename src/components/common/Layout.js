@@ -84,7 +84,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             </div>
           </header>
 
-          <main className="site-main mx-auto px-5 py-5">
+          <main className="site-main mx-auto px-4 px-md-5 py-5">
             {/* All the main content gets inserted here, index.js, post.js */}
             <Fade bottom>
               {children}
@@ -95,8 +95,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
         <div className="viewport-bottom">
           {/* The footer at the very bottom of the screen */}
-          <footer className="site-foot text-uppercase">
-            <div className="site-foot-nav container px-0">
+          <footer className="site-footer text-uppercase">
+            <div className="site-footer-nav container px-0">
               <div className="site-mast-left">
                 <Link to="/">
                   {site.logo ?
@@ -105,12 +105,12 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                   }
                 </Link>
               </div>
-              <div className="site-foot-nav">
+              <div className="site-footer-nav">
                 { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
                 { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                <Navigation data={site.navigation} navClass="site-footer-nav-item" />
               </div>
-              <div className="site-foot-nav">
+              <div className="site-footer-nav">
                 <Link to="/">{site.title}</Link> © 2020
               </div>
             </div>

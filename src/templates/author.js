@@ -21,7 +21,7 @@ const Author = ({ data, location, pageContext }) => {
     <>
       <MetaData data={data} location={location} type="profile" />
       <Layout>
-        <div className="container">
+        <div className="container px-0">
           <header className="author-header row">
             <div className="author-header-content col-md-8">
               <h1 className="h2 text-uppercase">{author.name}</h1>
