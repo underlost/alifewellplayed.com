@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 import Fade from 'react-reveal/Fade'
 import SvgLogo from '../Logo'
 import { Navigation } from '.'
+import { MobileNavigation } from '.'
 // import config from '../../utils/siteConfig'
 
 //CSS
@@ -24,6 +25,13 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
   const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
   const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
 
+  const [menuState, setMenuState] = useState(`viewport nav-is-closed`)
+  const toggleMenu = () => {
+    setMenuState(state => (state === `viewport nav-is-closed`
+      ? `viewport nav-is-active`
+      : `viewport nav-is-closed`))
+  }
+
   return (
     <>
       <Helmet>
@@ -32,10 +40,23 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         <body className={bodyClass} />
       </Helmet>
 
-      <div className="viewport">
+      <div className={menuState}>
         <div className="viewport-top">
           {/* The main header section on top of the screen */}
           <header className="site-head mx-auto mt-3">
+
+            <div className="toggle-wrapper">
+              <button type="button" className="btn navbar-toggler" onClick={toggleMenu}>
+                <span className={`icon-bar top-bar`} />
+                <span className={`icon-bar middle-bar`} />
+                <span className={`icon-bar middle-bar`} />
+                <span className={`icon-bar bottom-bar`} />
+                <span className={`sr-only`}>Toggle navigation</span>
+              </button>
+            </div>
+
+            <MobileNavigation data={site.navigation} navClass="site-nav-item" />
+
             <div className="container px-0">
               <div className="site-mast row no-gutters">
                 <div className="site-mast-left col-md-8">
@@ -45,7 +66,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     </Link>
                   </Fade>
                 </div>
-                <div className="site-mast-right col-md-4 align-self-end">
+                <div className="site-mast-right col-md-4 align-self-end d-none d-lg-block">
                   <Fade top>
                     <nav className="site-nav text-md-right mb-4 mr-md-3">
                       {/* The navigation items as setup in Ghost */}
