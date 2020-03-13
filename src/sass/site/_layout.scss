@@ -21,22 +21,14 @@ blockquote {
   height: 25px;
 }
 
-.site-main {
-  background-color: $latte;
+.post-feed-wrapper,
+.post-feed {
   width: 100%;
   max-width: $siteWidth;
+  margin-right: auto;
+  margin-left: auto;
   //overflow-y: hidden;
-  &::before {
-    content: '';
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAUElEQVQokWMsLC9X4ePg+MPBwfGPgUTA8vXLF5b+efNeMLCz/yVZs6SU1A+G16+/z5kzh3TNf/7+ZQQxkpOTSdXLwESyjlHNo5rpo5mBgQEAOswVefeBWU0AAAAASUVORK5CYII=");
-    background-position: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 55vh;
-    height: 400px;
-    z-index: -1;
-  }
+
 }
 
 .toggle-wrapper {
@@ -79,7 +71,6 @@ blockquote {
   overflow: hidden;
   transform: translateX(100%);
   transition: transform .3s;
-  border-left: 1px solid $black;
   box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
 
   .list-item {
@@ -88,7 +79,7 @@ blockquote {
     line-height: 1.5;
     font-weight: 800;
     a {
-      color: $green;
+      color: $blue;
     }
     .site-nav-item.active {
       color: $black;

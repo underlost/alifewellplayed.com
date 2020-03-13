@@ -1,10 +1,13 @@
 .site-head {
   max-width: $siteWidth;
+  position: relative;
+  z-index: 100;
   .site-nav-item-wrapper {
     display: block;
     text-transform: uppercase;
-    font-size: .9rem;
-    padding: 3px 5px;
+    font-size: 1.25rem;
+    padding: 3px 0;
+    margin-right: 0;
   }
   .site-nav-item {
     position: relative;
@@ -13,12 +16,12 @@
         content: '';
         display: block;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        right: -14px;
-        height: 100%;
-        width: 8px;
-        background-color: $green;
+        z-index: -1;
+        bottom: 5px;
+        right: 0;
+        height: 8px;
+        width: 125%;
+        background-color: $blue;
       }
     }
   }
@@ -27,14 +30,6 @@
     margin-left: -30px;
     transform: translateY(75px);
   }
-
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 40px;
-    background-color: $latte;
-  }
 }
 
 
@@ -42,7 +37,7 @@
   .site-head {
     .site-brand {
       margin-left: -50px;
-      
+
     }
   }
 }

@@ -20,16 +20,18 @@ const Index = ({ data, location, pageContext }) => {
     <>
       <MetaData data={data} location={location} type="website" title={`A Life Well Played`} isHome={true} />
       <Layout isHome={true}>
-        <div className="container px-0">
+        <>
           {pageContext.humanPageNumber === 1 && <ReadFirstBlock />}
-          <section className="post-feed">
-            {posts.map(({ node }) => (
-              // The tag below includes the markup for each post - components/common/PostCard.js
-              <PostCard key={node.id} post={node} />
-            ))}
-          </section>
-          <Pagination pageContext={pageContext} />
-        </div>
+          <div className="container pt-5">
+            <section className="post-feed">
+              {posts.map(({ node }) => (
+                // The tag below includes the markup for each post - components/common/PostCard.js
+                <PostCard key={node.id} post={node} />
+              ))}
+            </section>
+            <Pagination pageContext={pageContext} />
+          </div>
+        </>
       </Layout>
     </>
   )

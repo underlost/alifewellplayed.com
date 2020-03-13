@@ -27,7 +27,7 @@ const Post = ({ data, location }) => {
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
       <Layout>
-        <div className="container px-0">
+        <div className="container pt-5">
           <article className="content">
             {post.feature_image ? (
               <figure className="post-feature-image">

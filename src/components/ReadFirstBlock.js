@@ -7,13 +7,15 @@ const ReadFirst = ({ data }) => {
   const posts = data.allGhostPost.edges
 
   return (
-    <section className="read-first post-fead mt-3 mb-5">
-      <h6 className="h6 text-uppercase text-orange mb-3">Read this first</h6>
-      {posts.map(({ node }) => (
-        // The tag below includes the markup for each post - components/common/PostCard.js
-        <PostItem key={node.id} post={node} />
-      ))}
-    </section>
+    <div className="read-first-wrapper">
+      <section className="read-first post-feed mb-5 pb-5 px-4 py-5 px-md-5">
+        <h6 className="h6 text-uppercase text-orange mb-3">Read this first</h6>
+        {posts.map(({ node }) => (
+          // The tag below includes the markup for each post - components/common/PostCard.js
+          <PostItem key={node.id} post={node} />
+        ))}
+      </section>
+    </div>
   )
 }
 

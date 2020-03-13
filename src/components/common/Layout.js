@@ -57,7 +57,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
             <MobileNavigation data={site.navigation} navClass="site-nav-item" />
 
-            <div className="container px-0">
+            <div className="px-0">
               <div className="site-mast row no-gutters">
                 <div className="site-mast-left col-md-8">
                   <Fade top>
@@ -68,7 +68,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 </div>
                 <div className="site-mast-right col-md-4 align-self-end d-none d-lg-block">
                   <Fade top>
-                    <nav className="site-nav text-md-right mb-4 mr-md-3">
+                    <nav className="site-nav text-md-right mb-4 mr-0">
                       {/* The navigation items as setup in Ghost */}
                       <Navigation data={site.navigation} navClass="site-nav-item" />
                     </nav>
@@ -84,7 +84,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             </div>
           </header>
 
-          <main className="site-main mx-auto px-4 px-md-5 py-5">
+          <main className="site-main mx-auto py-5">
             {/* All the main content gets inserted here, index.js, post.js */}
             <Fade bottom>
               {children}

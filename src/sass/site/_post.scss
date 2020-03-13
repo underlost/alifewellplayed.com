@@ -1,5 +1,27 @@
+.read-first-wrapper {
+  &::before {
+    content: '';
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAUElEQVQokWMsLC9X4ePg+MPBwfGPgUTA8vXLF5b+efNeMLCz/yVZs6SU1A+G16+/z5kzh3TNf/7+ZQQxkpOTSdXLwESyjlHNo5rpo5mBgQEAOswVefeBWU0AAAAASUVORK5CYII=");
+    background-position: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5vh;
+    height: 400px;
+    z-index: -1;
+  }
+}
 .read-first {
   position: relative;
+  background-color: $latte;
+  margin-top: -40px;
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: $latte;
+  }
   &::after {
     content: '';
     margin-right: 0;

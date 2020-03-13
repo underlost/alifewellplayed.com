@@ -6,11 +6,12 @@ $green: #A3B8A6;
 $yellow: #FFDA65;
 $orange: #FD6707;
 $purple: #E1BED8;
+$pink: #e86f8e;
 
 // Set colors for components
 $primary: $black;
 
-$siteWidth: 640px;
+$siteWidth: 680px;
 
 // Fonts
 $font-family-proxima: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -18,7 +19,21 @@ $font-family-proxima: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI
 $font-family-freight-sans: freight-sans-pro, Arial, "Noto Sans", sans-serif,;
 
 $font-family-sans-serif: $font-family-proxima;
-$font-size-base: 1.15rem;
+$font-size-base: 1.3rem;
+$paragraph-margin-bottom: 1.75rem;
 
 $headings-font-family: $font-family-freight-sans;
 $headings-font-weight: 900;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 680px,
+  lg: 690px,
+);

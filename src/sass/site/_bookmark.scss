@@ -3,7 +3,7 @@
   border: 1px solid darken($latte, 10%);
 }
 .kg-bookmark-container {
-  padding: 2rem 0;
+  //padding: 2rem 0;
   display: block;
   border-width: 0 !important;
   display: flex;
@@ -19,7 +19,7 @@
     align-items: flex-start;
     -webkit-box-pack: start;
     justify-content: flex-start;
-    padding: 20px;
+    padding: 30px 20px;
   }
   .kg-bookmark-thumbnail {
     position: relative;
