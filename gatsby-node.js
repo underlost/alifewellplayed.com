@@ -11,43 +11,83 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
         {
-            allGhostPost(sort: {order: ASC, fields: published_at}, filter: {tags: {elemMatch: {name: {eq: "#blog"}}}}) {
-                edges {
-                    node {
-                        slug
-                    }
+          blog: allGhostPost(sort: {
+            order: ASC,
+            fields: published_at
+          }, filter: {
+            tags: {
+              elemMatch: {
+                name: {
+                  eq: "#blog"
                 }
+              }
             }
-            allGhostTag(
-              sort: { order: ASC, fields: name },
-              filter: {visibility: {eq: "public"}}
-              ) {
-                edges {
-                    node {
-                        slug
-                        url
-                        postCount
-                    }
+          }) {
+            edges {
+              node {
+                slug
+              }
+            }
+          }
+          notes: allGhostPost(sort: {
+            order: ASC,
+            fields: published_at
+          }, filter: {
+            tags: {
+              elemMatch: {
+                name: {
+                  eq: "#notes"
                 }
+              }
             }
-            allGhostAuthor(sort: { order: ASC, fields: name }) {
-                edges {
-                    node {
-                        slug
-                        url
-                        postCount
-                    }
-                }
+          }) {
+            edges {
+              node {
+                slug
+              }
             }
-            allGhostPage(sort: { order: ASC, fields: published_at }) {
-                edges {
-                    node {
-                        slug
-                        url
-                    }
-                }
+          }
+          allGhostTag(sort: {
+            order: ASC,
+            fields: name
+          }, filter: {
+            visibility: {
+              eq: "public"
             }
+          }) {
+            edges {
+              node {
+                slug
+                url
+                postCount
+              }
+            }
+          }
+          allGhostAuthor(sort: {
+            order: ASC,
+            fields: name
+          }) {
+            edges {
+              node {
+                slug
+                url
+                postCount
+              }
+            }
+          }
+          allGhostPage(sort: {
+            order: ASC,
+            fields: published_at
+          }) {
+            edges {
+              node {
+                slug
+                url
+              }
+            }
+          }
         }
+
     `)
 
   // Check for any errors
@@ -59,7 +99,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const tags = result.data.allGhostTag.edges
   const authors = result.data.allGhostAuthor.edges
   const pages = result.data.allGhostPage.edges
-  const posts = result.data.allGhostPost.edges
+  const posts = result.data.blog.edges
+  const notes = result.data.notes.edges
 
   // Load templates
   const indexTemplate = path.resolve(`./src/templates/index.js`)
@@ -173,6 +214,22 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create post pages
   posts.forEach(({ node }) => {
+    // This part here defines, that our posts will use
+    // a `/:slug/` permalink.
+    node.url = `/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: postTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+
+  notes.forEach(({ node }) => {
     // This part here defines, that our posts will use
     // a `/:slug/` permalink.
     node.url = `/${node.slug}/`

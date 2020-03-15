@@ -23,7 +23,7 @@
 }
 
 .post-card-header {
-  
+
   .post-card-link {
     position: relative;
     text-decoration: underline;
@@ -54,7 +54,7 @@
       }
     }
   }
-  
+
 }
 
 .post-card-tags {
@@ -78,9 +78,22 @@
 .post-card-image {
   margin: 0 0 10px 0;
   width: auto;
-  height: 200px;
-  background: var(--color-secondary) no-repeat center center;
+  height: 225px;
+  background: $primary no-repeat center center;
   background-size: cover;
+}
+
+.post-feature-image {
+  margin: 0 0 10px 0;
+  width: auto;
+  max-height: 400px;
+  overflow: hidden;
+  img {
+    height: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center center;
+  }
 }
 
 .post-card-footer {
@@ -88,7 +101,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 10px 0 0 0;
-  color: var(--color-secondary);
+  color: $primary;
 }
 
 .post-card-footer-left {
@@ -117,4 +130,10 @@
 
 .post-card-avatar .default-avatar {
   width: 26px;
+}
+
+@media (min-width: 500px) {
+  .post-feature-image {
+    margin: 0 -60px 10px -60px;
+  }
 }
