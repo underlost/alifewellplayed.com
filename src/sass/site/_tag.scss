@@ -2,20 +2,17 @@
 /* ---------------------------------------------------------- */
 
 .tag-header {
-    margin: 0;
-    position: relative;
-    h1 {
-      margin: 0 0 1rem 0;
-    }
-    
+  position: relative;
+  background-color: $latte;
+  h1 {
+    margin: 0 0 1rem 0;
+  }
     &::after {
       content: '';
       margin-right: 0;
       margin-left: auto;
       transform: translateX(90px);
       display: block;
-      margin-top: 20px;
-      margin-bottom: 60px;
       width: 250px;
       height: 72px;
       background-position: center;
@@ -27,10 +24,16 @@
 
 @media (max-width: 500px) {
     .tag-header {
-        border-bottom: var(--color-bg) 1px solid;
         padding-bottom: 4vw;
+        p {
+          font-size: 1.7rem;
+        }
     }
-    .tag-header p {
-        font-size: 1.7rem;
-    }
+
+}
+
+@media (min-width: 500px) {
+  .tag-header {
+    margin-left: -1.5rem;
+  }
 }

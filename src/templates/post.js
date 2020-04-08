@@ -41,7 +41,7 @@ const Post = ({ data, location }) => {
                   in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} />
                 </div>
               )}
-              <h1 className="content-title h2 mb-1">{post.title}</h1>
+              <h1 className="content-title h1 mb-3">{post.title}</h1>
               <time className="post-byline-item d-block h6 text-uppercase mb-4" dateTime={post.published_at}>
                 <span className="sr-only">Published on </span>
                 {publishedAt}

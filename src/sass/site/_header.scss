@@ -1,16 +1,16 @@
 .site-head {
-  max-width: $siteWidth;
   position: relative;
   z-index: 100;
   .site-nav-item-wrapper {
     display: block;
-    text-transform: uppercase;
-    font-size: 1.25rem;
+    line-height: 1.2;
     padding: 3px 0;
     margin-right: 0;
   }
   .site-nav-item {
     position: relative;
+    font-family: $headings-font-family;
+    text-transform: uppercase;
     &.active {
       &::after {
         content: '';
@@ -27,8 +27,7 @@
   }
 
   .site-brand {
-    margin-left: -30px;
-    transform: translateY(75px);
+    margin-left: 0px;
   }
 }
 
@@ -36,8 +35,12 @@
 @media (min-width: 500px) {
   .site-head {
     .site-brand {
-      margin-left: -50px;
+      margin-left: 0rem;
 
     }
+  }
+  .site-mast-nav {
+    position: absolute;
+    left: -175px;
   }
 }

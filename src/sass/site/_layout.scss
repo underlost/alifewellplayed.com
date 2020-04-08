@@ -12,6 +12,13 @@ blockquote {
   padding-left: 1.5rem;
 }
 
+.viewport {
+  border-left: 1px solid #D0CBC1;
+  width: 100%;
+  max-width: $siteWidth;
+  margin: auto;
+}
+
 .site-nav-icon {
     height: 15px;
     margin: -5px 0 0;
@@ -23,12 +30,24 @@ blockquote {
 
 .post-feed-wrapper,
 .post-feed {
-  width: 100%;
-  max-width: $siteWidth;
   margin-right: auto;
   margin-left: auto;
   //overflow-y: hidden;
 
+}
+
+.post-feed {
+  position: relative;
+  &::after {
+    content: '';
+    transform: translateX(-90px);
+    display: block;
+    width: 250px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTUiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAyNTUgMzAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMSIgeDI9IjAiIHkxPSIuNSIgeTI9Ii41IiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2EzYjhhNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM5OWUyZTciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIxIiB4Mj0iMCIgeTE9Ii41IiB5Mj0iLjUiIGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94Ij4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjOTllMmU3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZGE2NSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHBhdGggZmlsbD0idXJsKCNhKSIgZD0iTTAgMGgyMDB2MzBIMHoiLz4KICA8cGF0aCBmaWxsPSJ1cmwoI2IpIiBkPSJNMCAwaDIwMHYxMEgweiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTUgMTEpIi8+Cjwvc3ZnPgo=")
+  }
 }
 
 .toggle-wrapper {
@@ -59,7 +78,7 @@ blockquote {
 }
 
 .site-nav-mobile-wrapper {
-  background-color: $pink;
+  background-color: $latte;
   color: $white;
   position: fixed;
   max-width: 100%;
@@ -71,13 +90,13 @@ blockquote {
   overflow: hidden;
   transform: translateX(100%);
   transition: transform .3s;
-  box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
 
   .list-item {
     font-size: 2rem;
     letter-spacing: 1.5px;
-    line-height: 1.5;
+    line-height: 1.2;
     font-weight: 800;
+    font-size: 2.5rem;
     a {
       color: $blue;
     }
@@ -90,7 +109,7 @@ blockquote {
   }
 }
 
-.viewport.nav-is-active {
+.page.nav-is-active {
   .site-nav-mobile-wrapper {
     transform: translateX(10%);
     transition: transform .3s;
