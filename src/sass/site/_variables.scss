@@ -16,15 +16,21 @@ $body-color: #03080F;
 $siteWidth: 630px;
 
 // Fonts
-$font-family-sans-serif: rubik, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$headings-font-family: brandon-grotesque, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif:  'Rubik', rubik, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: 'Brandon Grotesque', brandon-grotesque, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-base: $font-family-sans-serif !default;
 $font-size-base: 1.1rem;
 $line-height-base: 1.75;
 $paragraph-margin-bottom: 1.75rem;
 
 $headings-font-weight: 900;
 
-$h1-font-size: $font-size-base * 2.75;
+$h1-font-size: $font-size-base * 4;
+$h2-font-size: $font-size-base * 2.75;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
 
 $grid-breakpoints: (
   xs: 0,
