@@ -2,6 +2,20 @@
 .read-first {
   position: relative;
   background-color: $latte;
+  &::before {
+    content: '';
+    position: absolute;
+    //z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left:0;
+    //background-color: red;
+    background-blend-mode: overlay;
+    opacity: .3;
+    background-image: url('/images/static.jpg');
+    background-size: contain;
+  }
   &::after {
     content: '';
     margin-right: 0;

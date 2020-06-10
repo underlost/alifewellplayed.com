@@ -11,7 +11,7 @@
 
   .post-card-link {
     position: relative;
-    text-decoration: underline;
+    //text-decoration: underline;
     overflow: hidden;
     &::after,
     &::before {
@@ -82,17 +82,8 @@
 }
 
 .post-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 10px 0 0 0;
   color: $primary;
-}
-
-.post-card-footer-left {
-}
-
-.post-card-footer-right {
 }
 
 .post-card-avatar {

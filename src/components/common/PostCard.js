@@ -15,24 +15,24 @@ const PostCard = ({ post }) => {
   return (
     <article className="post-card py-lg-3 mb-5">
       <header className="post-card-header">
-        {post.feature_image &&
+        {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
+        <Link className="post-card-link d-block" to={url}><h2 className="post-card-title h4 text-uppercase">{post.title}</h2>
+          {post.feature_image &&
           <div className="post-card-image" style={{
             backgroundImage: `url(${post.feature_image})` ,
           }}></div>}
-        {post.tags && <div className="post-card-tags h6 text-uppercase mb-1"> <Tags post={post} visibility="public" autolink={false} /></div>}
+        </Link>
         {post.featured && <span className="h6 text-uppercase mb-1 text-orange sr-only">Featured</span>}
-        <Link className="post-card-link d-block" to={url}><h2 className="post-card-title h4 text-uppercase">{post.title}</h2></Link>
+
       </header>
+
       <section className="post-card-excerpt" dangerouslySetInnerHTML={{ __html: postExcept }} />
+
       <footer className="post-card-footer sr-only">
-        <div className="post-card-footer-left">
-          <div className="post-card-avatar">
-            {post.primary_author.profile_image ?
-              <img className="author-profile-image" src={post.primary_author.profile_image} alt={post.primary_author.name}/> :
-              <img className="default-avatar" src="/images/icons/avatar.svg" alt={post.primary_author.name}/>
-            }
-          </div>
-          <span>{ post.primary_author.name }</span>
+        {post.tags && <div className="post-card-tags h6 text-uppercase mb-1">Posted in: <Tags post={post} visibility="public" autolink={false} /></div>}
+
+        <div className="sr-only">
+          <span>By: { post.primary_author.name }</span>
         </div>
         <div className="post-card-footer-right">
           <div>{readingTime}</div>
@@ -48,6 +48,7 @@ PostCard.propTypes = {
     title: PropTypes.string.isRequired,
     feature_image: PropTypes.string,
     featured: PropTypes.bool,
+    primary_tag: PropTypes.PropTypes.object,
     tags: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string,

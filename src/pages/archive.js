@@ -27,6 +27,7 @@ const ArchivePage = ({ data, location }) => {
               // The tag below includes the markup for each post - components/common/PostCard.js
               <PostItem key={node.id} post={node} />
             ))}
+            <div className="py-5" />
           </section>
         </div>
       </Layout>
