@@ -61,19 +61,15 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
               <div className="px-0">
                 <div className="site-mast row no-gutters">
                   <div className="site-mast-left col-md-8">
-                    <Fade top>
-                      <Link className="site-brand d-block" to="/">
-                        <SvgLogo />
-                      </Link>
-                    </Fade>
+                    <Link className="site-brand d-block" to="/">
+                      <SvgLogo />
+                    </Link>
                   </div>
                   <div className="site-mast-nav d-none d-lg-block">
-                    <Fade top>
-                      <nav className="site-nav text-md-right mb-4 mr-0">
-                        {/* The navigation items as setup in Ghost */}
-                        <Navigation data={site.navigation} navClass="site-nav-item" />
-                      </nav>
-                    </Fade>
+                    <nav className="site-nav text-md-right mb-4 mr-0">
+                      {/* The navigation items as setup in Ghost */}
+                      <Navigation data={site.navigation} navClass="site-nav-item" />
+                    </nav>
                   </div>
                 </div>
                 { isHome ?
@@ -87,7 +83,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
             <main className="site-main mx-auto py-5">
               {/* All the main content gets inserted here, index.js, post.js */}
-              <Fade bottom>
+              <Fade>
                 {children}
               </Fade>
             </main>
