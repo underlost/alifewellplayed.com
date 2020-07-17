@@ -64,7 +64,6 @@ export const pageQuery = graphql`
         tags: {
           elemMatch: {
             slug: { eq: $slug }
-            #name: {eq: "#blog"},
           }
         }
       }
@@ -79,4 +78,5 @@ export const pageQuery = graphql`
       }
     }
   }
+
 `

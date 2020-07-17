@@ -38,7 +38,6 @@ const Post = ({ data, location }) => {
               {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
               <h1 className="content-title h1 mb-3 text-uppercase">{post.title}</h1>
               <div className="post-meta mb-5">
-
                 <time className="post-byline-item d-inline-block h6 text-uppercase pr-5" dateTime={post.published_at}>
                   <span className="sr-only">Published on </span>
                   {publishedAt}
@@ -49,7 +48,6 @@ const Post = ({ data, location }) => {
             {/* The main post content */}
             <section className="content-body load-external-scripts mb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
             <footer className="post-footer row no-gutters">
-
               {post.tags && (
                 <div className="post-byline-item post-card-tags h6 text-uppercase mb-1 d-inline-block">
                   in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} />

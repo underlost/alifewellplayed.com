@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SvgLogo = props => (
+const SvgLogo = (props) => (
   <svg width={350.5} height={313.52} viewBox="0 0 350.5 313.52" {...props}>
     <title>{`A Life Well Played, By Tyler Rilling`}</title>
     <path fill="#9ae2e7" d="M41 231.52a41 41 0 11-41 41 41 41 0 0141-41z" />
