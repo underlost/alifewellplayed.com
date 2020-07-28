@@ -30,7 +30,7 @@ const ReadFirstBlock = props => (
   <StaticQuery
     query={graphql`
       query GhostReadFirstQuery {
-        allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { featured: { eq: true } }, limit: 5) {
+        allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { featured: { eq: true } }, limit: 3) {
           edges {
             node {
               ...GhostPostFields

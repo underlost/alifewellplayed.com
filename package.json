@@ -1,7 +1,7 @@
 {
   "name": "alifewellplayed",
   "description": "A website about video games, pop culture, and the people involved.",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "license": "MIT",
   "author": "Tyler Rilling",
   "homepage": "https://alifewellplayed.com",
@@ -10,8 +10,8 @@
     "url": "git+https://github.com/underlost/alifewellplayed.com.git"
   },
   "resolutions": {
-    "sharp": "0.25.2",
-    "babel-plugin-remove-graphql-queries": "2.9.4"
+    "sharp": "0.25.4",
+    "babel-plugin-remove-graphql-queries": "2.9.15"
   },
   "engines": {
     "node": ">= 8.9.0"
@@ -74,14 +74,14 @@
     "gatsby-plugin-sass": "^2.1.26",
     "gatsby-plugin-sharp": "^2.3.10",
     "gatsby-source-filesystem": "^2.1.43",
-    "gatsby-source-ghost": "4.0.4",
+    "gatsby-source-ghost": "^4.0.5",
     "gatsby-transformer-sharp": "^2.3.12",
-    "lodash": "4.17.15",
+    "lodash": "^4.17.19",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^6.0.0",
     "react-reveal": "^1.2.2",
     "remarkable": "^2.0.0",
-    "sharp": "^0.25.2"
+    "sharp": "^0.25.4"
   }
 }
