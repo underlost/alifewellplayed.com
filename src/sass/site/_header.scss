@@ -26,9 +26,13 @@
       }
     }
   }
-
   .site-brand {
     margin-left: 0px;
+    &:hover {
+      .logoTitle {
+        fill: $black;
+      }
+    }
   }
 }
 

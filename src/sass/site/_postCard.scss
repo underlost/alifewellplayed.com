@@ -7,39 +7,47 @@
   }
 }
 
-.post-card-header {
+.post-card-article {
+  .post-card-header {
+    .post-card-link {
+      position: relative;
+      //text-decoration: underline;
+      overflow: hidden;
 
-  .post-card-link {
-    position: relative;
-    //text-decoration: underline;
-    overflow: hidden;
-    &::after,
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: 1;
-      top: 1rem;
-      right: -20px;
-      height: 15px;
-      width: 100%;
-      max-width: 450px;
-    }
-    &::after {
-      background-color: $blue;
-    }
-    &::before {
-      background-color: $yellow;
-      transform: translateX(100%);
-      z-index: 5;
-      transition: ease all .5s;
-    }
-    &:hover {
+      &::after,
       &::before {
-        transform: translateX(0);
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        right: -20px;
+        height: 15px;
+        width: 100%;
+        max-width: 450px;
+      }
+
+      &::after {
+        background-color: $blue;
+      }
+
+      &::before {
+        background-color: $yellow;
+        transform: translateX(100%);
+        z-index: 5;
+        transition: ease all .5s;
+      }
+
+      &:hover {
+        &::before {
+          transform: translateX(0);
+        }
       }
     }
   }
+}
 
+.post-card-linked {
+  font-size: 1rem;
 }
 
 .post-card-tags {

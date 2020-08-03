@@ -16,9 +16,9 @@ const Navigation = ({ data, navClass }) => (
   <ul className={`list-inline`}>
     {data.map((navItem, i) => {
       if (navItem.url.match(/^\s?http(s?)/gi)) {
-        return <span className="site-nav-item-wrapper list-inline-item"><a className={navClass} href={navItem.url} key={i} target="_blank" rel="noopener noreferrer">{navItem.label}</a></span>
+        return <li key={i} className="site-nav-item-wrapper list-inline-item"><a className={navClass} href={navItem.url} target="_blank" rel="noopener noreferrer">{navItem.label}</a></li>
       } else {
-        return <span className="site-nav-item-wrapper list-inline-item"><Link activeClassName={`active`} className={navClass} to={navItem.url} key={i}>{navItem.label}</Link></span>
+        return <li key={i} className="site-nav-item-wrapper list-inline-item"><Link activeClassName={`active`} className={navClass} to={navItem.url}>{navItem.label}</Link></li>
       }
     })}
   </ul>

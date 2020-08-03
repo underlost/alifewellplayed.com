@@ -20,8 +20,8 @@ const Tag = ({ data, location, pageContext }) => {
       <MetaData data={data} location={location} type="series" />
       <Layout>
         <header className="tag-header mb-5 pb-5 px-4 py-5 px-md-5">
-          <h1 className="h2 mb-1">{tag.name}</h1>
-          {tag.description ? <p className="h6">{tag.description}</p> : null}
+          <h1 className="h2 mb-4">{tag.name}</h1>
+          {tag.description ? <p className="h3 mb-0 font-weight-normal">{tag.description}</p> : null}
         </header>
         <div className="container pt-5">
           <section className="post-feed">
@@ -60,13 +60,7 @@ export const pageQuery = graphql`
     }
     allGhostPost(
       sort: { order: DESC, fields: [published_at] }
-      filter: {
-        tags: {
-          elemMatch: {
-            slug: { eq: $slug }
-          }
-        }
-      }
+      filter: { tags: { elemMatch: { slug: { eq: $slug } } } }
 
       limit: $limit
       skip: $skip
@@ -78,5 +72,4 @@ export const pageQuery = graphql`
       }
     }
   }
-
 `

@@ -12,9 +12,9 @@ const MobileNavigation = ({ data, navClass }) => (
       <ul className={`site-nav-mobile-list`}>
         {data.map((navItem, i) => {
           if (navItem.url.match(/^\s?http(s?)/gi)) {
-            return <span className="h2 list-item d-block text-uppercase"><a className={navClass} href={navItem.url} key={i} target="_blank" rel="noopener noreferrer">{navItem.label}</a></span>
+            return <li key={i} className="h2 list-item d-block text-uppercase"><a className={navClass} href={navItem.url} target="_blank" rel="noopener noreferrer">{navItem.label}</a></li>
           } else {
-            return <span className="h2 list-item d-block text-uppercase"><Link activeClassName={`active`} className={navClass} to={navItem.url} key={i}>{navItem.label}</Link></span>
+            return <li key={i} className="h2 list-item d-block text-uppercase"><Link activeClassName={`active`} className={navClass} to={navItem.url}>{navItem.label}</Link></li>
           }
         })}
       </ul>

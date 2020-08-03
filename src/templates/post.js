@@ -6,6 +6,7 @@ import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import RelatedPostsBlock from '../components/RelatedPostsBlock'
 import dayjs from 'dayjs'
 
 /**
@@ -27,7 +28,7 @@ const Post = ({ data, location }) => {
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
       <Layout>
-        <div className="container pt-5">
+        <div className="container py-5">
           <article className="content">
             {post.feature_image ? (
               <figure className="post-feature-image">
@@ -63,6 +64,8 @@ const Post = ({ data, location }) => {
             </footer>
           </article>
         </div>
+
+        <RelatedPostsBlock tags={post.tags} currentArticleSlug={post.slug} />
       </Layout>
     </>
   )
@@ -73,6 +76,7 @@ Post.propTypes = {
     ghostPost: PropTypes.shape({
       codeinjection_styles: PropTypes.object,
       title: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
       primary_tag: PropTypes.PropTypes.object,
       html: PropTypes.string.isRequired,
       feature_image: PropTypes.string,

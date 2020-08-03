@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Fade from 'react-reveal/Fade'
 import SvgLogo from '../Logo'
 import { Navigation } from '.'
 import { MobileNavigation } from '.'
@@ -83,9 +82,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
             <main className="site-main mx-auto py-5">
               {/* All the main content gets inserted here, index.js, post.js */}
-              <Fade>
-                {children}
-              </Fade>
+              {children}
             </main>
 
           </div>

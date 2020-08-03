@@ -1,49 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import { Tags } from '@tryghost/helpers-gatsby'
-import { readingTime as readingTimeHelper } from '@tryghost/helpers'
-import { Remarkable } from 'remarkable'
-
-const md = new Remarkable()
-
+import PostCardLink from './PostCardLink'
+import PostCardArticle from './PostCardArticle'
 const PostCard = ({ post }) => {
-  const url = `/${post.slug}/`
-  const readingTime = readingTimeHelper(post)
-  const postExcept = md.render(post.excerpt)
-
+  // Check if post is a link list item
+  const isLinked = post.tags.some(tag => (tag.name === `#linked`))
+  //console.log(isLinked)
+  //console.log(post.tags)
   return (
-    <article className="post-card py-lg-3 mb-5">
-      <header className="post-card-header">
-        {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
-        <Link className="post-card-link d-block" to={url}><h2 className="post-card-title h4 text-uppercase">{post.title}</h2>
-          {post.feature_image &&
-          <div className="post-card-image" style={{
-            backgroundImage: `url(${post.feature_image})` ,
-          }}></div>}
-        </Link>
-        {post.featured && <span className="h6 text-uppercase mb-1 text-orange sr-only">Featured</span>}
-
-      </header>
-
-      <section className="post-card-excerpt" dangerouslySetInnerHTML={{ __html: postExcept }} />
-
-      <footer className="post-card-footer sr-only">
-        {post.tags && <div className="post-card-tags h6 text-uppercase mb-1">Posted in: <Tags post={post} visibility="public" autolink={false} /></div>}
-
-        <div className="sr-only">
-          <span>By: { post.primary_author.name }</span>
-        </div>
-        <div className="post-card-footer-right">
-          <div>{readingTime}</div>
-        </div>
-      </footer>
-    </article>
+    <>
+      {isLinked ? (
+        <PostCardLink key={post.id} post={post} />
+      ) : (
+        <PostCardArticle key={post.id} post={post} />
+      )}
+    </>
   )
 }
 
 PostCard.propTypes = {
   post: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     feature_image: PropTypes.string,
