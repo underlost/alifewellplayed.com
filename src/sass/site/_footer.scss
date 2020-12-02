@@ -11,10 +11,10 @@
 
 .site-footer-nav {
     a {
-        color: rgba(0, 0, 0, 0.7);
+        color: $primary;
         &:hover {
             text-decoration: none;
-            color: rgba(0, 0, 0, 1);
+            color: $secondary;
         }
     }
 }
@@ -25,7 +25,7 @@
             display: block;
             margin-right: 0;
             margin-left: 0;
-            
+
             a {
                 font-weight: bold;
                 display: block;

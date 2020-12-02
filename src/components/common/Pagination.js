@@ -9,7 +9,7 @@ const Pagination = ({ pageContext }) => {
     <nav className="pagination" role="navigation">
       <div>
         {previousPagePath && (
-          <Link to={previousPagePath} className="btn btn-primary" rel="prev">
+          <Link to={previousPagePath} className="btn btn-link" rel="prev">
             Previous
           </Link>
         )}
@@ -17,7 +17,7 @@ const Pagination = ({ pageContext }) => {
       {numberOfPages > 1 && <div className="pagination-location"><small>Page {humanPageNumber} of {numberOfPages}</small></div>}
       <div>
         {nextPagePath && (
-          <Link to={nextPagePath} rel="next" className="btn btn-primary">
+          <Link to={nextPagePath} rel="next" className="btn btn-link">
             Next
           </Link>
         )}

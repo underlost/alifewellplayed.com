@@ -13,12 +13,14 @@ const PostCardLink = ({ post }) => {
       <header className="post-card-header">
 
         {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
-        <Link className="post-card-link d-block" to={url}><h2 className="post-card-title h5 text-uppercase">{post.title}</h2>
-          {post.feature_image &&
-          <div className="post-card-image" style={{
+        <h2 className="post-card-title h5 text-uppercase"><Link className="post-card-link d-inline" to={url}>{post.title}</Link></h2>
+
+        {post.feature_image &&
+          <Link className="post-card-image d-block" to={url} style={{
             backgroundImage: `url(${post.feature_image})` ,
-          }}></div>}
-        </Link>
+          }}></Link>
+        }
+
         {post.featured && <span className="h6 text-uppercase mb-1 text-orange sr-only">Featured</span>}
 
       </header>

@@ -12,7 +12,7 @@ import { Link } from 'gatsby'
 const RelatedPosts = ({ posts }) => (
   <div className="read-first-wrapper">
     <section className="read-first post-feed mb-5 pb-5 px-4 py-5 px-md-5">
-      <h6 className="h5 text-uppercase text-orange mb-5">Read More:</h6>
+      <h6 className="h5 text-uppercase text-green mb-5">Read More:</h6>
       <ul className="list-unstyled read-first-list">
         {posts.map(({ article }) => (
           <li key={article.slug}>

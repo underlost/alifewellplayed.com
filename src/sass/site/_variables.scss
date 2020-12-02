@@ -1,17 +1,24 @@
 // Colors
+
+$SpiderGwenPink: #FD3799;
+$GoblinGreen: #B3FC38;
+$Nightshade: #20202A;
+$NightshadeOutline: #33304B;
+
+
 $black: #03080F;
-$latte: #F1F1ED;
 $blue: #99E2E7;
-$green: #A3B8A6;
+$green: $GoblinGreen;
 $yellow: #FFDA65;
 $orange: #FD6707;
-$purple: #E1BED8;
-$pink: #e86f8e;
+$purple: #9588FC;
+$pink: $SpiderGwenPink;
 
 // Set colors for components
-$primary: $black;
-$body-bg: #F8F8F6;
-$body-color: #03080F;
+$primary: #B3ACE3;
+$secondary: $SpiderGwenPink;
+$body-bg: #1B1B24;
+$body-color: #B3ACE3;
 
 $siteWidth: 630px;
 

@@ -47,6 +47,24 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+          aside: allGhostPost(sort: {
+            order: ASC,
+            fields: published_at
+          }, filter: {
+            tags: {
+              elemMatch: {
+                name: {
+                  eq: "#aside"
+                }
+              }
+            }
+          }) {
+            edges {
+              node {
+                slug
+              }
+            }
+          }
           allGhostTag(sort: {
             order: ASC,
             fields: name
@@ -101,6 +119,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const pages = result.data.allGhostPage.edges
   const posts = result.data.blog.edges
   const notes = result.data.notes.edges
+  const aside = result.data.aside.edges
 
   // Load templates
   const indexTemplate = path.resolve(`./src/templates/index.js`)
@@ -233,6 +252,22 @@ exports.createPages = async ({ graphql, actions }) => {
     // This part here defines, that our posts will use
     // a `/:slug/` permalink.
     node.url = `/${node.slug}/`
+
+    createPage({
+      path: node.url,
+      component: postTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+
+  aside.forEach(({ node }) => {
+    // This part here defines, that our posts will use
+    // a `/:slug/` permalink.
+    node.url = `/aside/${node.slug}/`
 
     createPage({
       path: node.url,

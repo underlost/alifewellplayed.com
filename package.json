@@ -1,17 +1,13 @@
 {
   "name": "alifewellplayed",
-  "description": "A website about video games, pop culture, and the people involved.",
-  "version": "5.1.1",
+  "description": "A website about video games, pop culture, and people.",
+  "version": "5.2.0",
   "license": "MIT",
   "author": "Tyler Rilling",
   "homepage": "https://alifewellplayed.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/underlost/alifewellplayed.com.git"
-  },
-  "resolutions": {
-    "sharp": "0.25.4",
-    "babel-plugin-remove-graphql-queries": "2.9.15"
   },
   "engines": {
     "node": ">= 8.9.0"
@@ -37,18 +33,19 @@
     "bootstrap": "cp -r node_modules/bootstrap/scss/ src/sass/bootstrap/"
   },
   "devDependencies": {
-    "@types/react": "^16.0.0",
+    "@types/react": "^17.0.0",
     "babel-eslint": "^10.1.0",
     "core-js": "^3.6.0",
     "eslint": "^7.0.0",
-    "eslint-plugin-ghost": "^1.0.0",
+    "eslint-plugin-ghost": "^2.0.0",
     "eslint-plugin-react": "^7.17.0",
     "jquery": "^3.4.1",
-    "node-sass": "^4.9.0",
     "popper.js": "^1.16.0",
     "prettier": "^2.0.2",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.29.0",
     "typescript": ">=3.7.5",
-    "webpack": "^4.41.4"
+    "webpack": "^5.4.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
@@ -57,6 +54,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@tryghost/helpers": "^1.1.22",
     "@tryghost/helpers-gatsby": "^1.0.25",
+    "babel-plugin-remove-graphql-queries": "^2.9.18",
     "bootstrap": "^4.4.1",
     "cheerio": "1.0.0-rc.3",
     "core-js": "^3.6.0",
@@ -77,11 +75,10 @@
     "gatsby-source-ghost": "^4.0.5",
     "gatsby-transformer-sharp": "^2.3.12",
     "lodash": "^4.17.19",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-helmet": "^6.0.0",
     "react-reveal": "^1.2.2",
-    "remarkable": "^2.0.0",
-    "sharp": "^0.25.4"
+    "remarkable": "^2.0.0"
   }
 }
