@@ -70,6 +70,6 @@
   }
 
   .kg-bookmark-description {
-    @extend .sr-only;
+    @extend .visually-hidden;
   }
 }

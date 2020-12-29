@@ -26,7 +26,7 @@ const AsideCard = ({ post }) => {
       <section className="content-body load-external-scripts mb-1" dangerouslySetInnerHTML={{ __html: post.html }} />
       <footer className="post-card-footer mt-0">
         <div className="post-meta mb-2">
-          <time className="post-byline-item d-inline-block h6 text-uppercase pr-5" dateTime={post.published_at}>
+          <time className="post-byline-item d-inline-block h6 text-uppercase pe-5" dateTime={post.published_at}>
             {timeSince}
           </time>
         </div>

@@ -28,7 +28,7 @@ const Post = ({ data, location }) => {
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
       <Layout>
-        <div className="container py-5 px-3">
+        <div className="container py-5">
           <article className="content pb-5">
             {post.feature_image ? (
               <figure className="post-feature-image">
@@ -39,11 +39,11 @@ const Post = ({ data, location }) => {
               {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
               <h1 className="content-title h1 mb-3 text-purple">{post.title}</h1>
               <div className="post-meta mb-5">
-                <time className="post-byline-item d-inline-block h6 text-uppercase pr-5" dateTime={post.published_at}>
+                <time className="post-byline-item d-inline-block h6 text-uppercase pe-5" dateTime={post.published_at}>
                   <span className="sr-only">Published on </span>
                   {publishedAt}
                 </time>
-                <p className="h6 text-uppercase d-inline-block mb-1 pr-4">{readingTime}</p>
+                <p className="h6 text-uppercase d-inline-block mb-1 pe-4">{readingTime}</p>
               </div>
             </header>
             {/* The main post content */}

@@ -1,10 +1,8 @@
 // Colors
-
 $SpiderGwenPink: #FD3799;
 $GoblinGreen: #B3FC38;
 $Nightshade: #20202A;
 $NightshadeOutline: #33304B;
-
 
 $black: #03080F;
 $blue: #99E2E7;
@@ -20,7 +18,7 @@ $secondary: $SpiderGwenPink;
 $body-bg: #1B1B24;
 $body-color: #B3ACE3;
 
-$siteWidth: 630px;
+$siteWidth: 680px;
 
 // Fonts
 $font-family-sans-serif:  'Rubik', rubik, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -30,6 +28,8 @@ $font-size-base: 1.25rem;
 $font-weight-base: 300;
 $line-height-base: 1.75;
 $paragraph-margin-bottom: 1.75rem;
+
+$link-decoration: none;
 
 $headings-font-weight: 900;
 $headings-margin-bottom: 2rem;
@@ -41,12 +41,16 @@ $h4-font-size: 1.5rem;
 $h5-font-size: 1.25rem;
 $h6-font-size: 1rem;
 
+$variable-prefix: site- !default;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
 );
+
+$grid-gutter-width: 6rem;
 
 $container-max-widths: (
   sm: 540px,

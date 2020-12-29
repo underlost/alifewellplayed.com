@@ -39,7 +39,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
       </Helmet>
 
       <div className={menuState}>
-        <div className="viewport pl-lg-4">
+        <div className="viewport">
           <div className="viewport-top py-lg-4">
             {/* The main header section on top of the screen */}
             <header className="site-head mx-auto mt-3">
@@ -56,9 +56,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
               <MobileNavigation data={site.navigation} navClass="site-nav-item" />
 
-              <div className="px-3">
-                <div className="site-mast row no-gutters">
-                  <div className="site-mast-left col-md-8">
+              <div className="px-5">
+                <div className="site-mast">
+                  <div className="site-mast-left">
                     <Link className="site-brand d-block" to="/">
                       <SvgLogo />
                     </Link>

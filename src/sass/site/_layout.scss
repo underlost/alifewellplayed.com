@@ -12,6 +12,15 @@ blockquote {
   padding-left: 1.5rem;
 }
 
+pre {
+  border: 1px solid $NightshadeOutline;
+  background-color: $Nightshade;
+}
+
+.sr-only {
+  @extend .visually-hidden;
+}
+
 .viewport {
   border-left: 1px solid #33304B;
   width: 100%;
@@ -33,7 +42,6 @@ blockquote {
   margin-right: auto;
   margin-left: auto;
   //overflow-y: hidden;
-
 }
 
 .post-feed {
