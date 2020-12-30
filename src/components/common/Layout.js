@@ -56,7 +56,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
               <MobileNavigation data={site.navigation} navClass="site-nav-item" />
 
-              <div className="px-5">
+              <div className="container px-3 px-md-5">
                 <div className="site-mast">
                   <div className="site-mast-left">
                     <Link className="site-brand d-block" to="/">

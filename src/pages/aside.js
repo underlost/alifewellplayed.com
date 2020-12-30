@@ -18,7 +18,7 @@ const AsidePage = ({ data, location }) => {
     <>
       <MetaData data={data} location={location} type="website" />
       <Layout>
-        <div className="container pt-5">
+        <div className="container px-3 px-md-5 pt-5">
           {page ? (
             <article>
               <h1 className="content-title h2">{page.title}</h1>

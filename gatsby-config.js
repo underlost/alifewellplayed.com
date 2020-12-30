@@ -265,5 +265,30 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-amp`,
+      options: {
+        analytics: {
+          type: `gtag`,
+          dataCredentials: `include`,
+          config: {
+            vars: {
+              gtag_id: `UA-111594796-1`,
+              config: {
+                'UA-111594796-1': {
+                  page_location: `{{pathname}}`,
+                },
+              },
+            },
+          },
+        },
+        canonicalBaseUrl: `https://alifewellplayed.com`,
+        components: [`amp-form`],
+        excludedPaths: [`/404*`, `/`],
+        pathIdentifier: `/amp/`,
+        relAmpHtmlPattern: `{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}`,
+        useAmpClientIdApi: true,
+      },
+    },
   ],
 }

@@ -44,7 +44,8 @@ pre {
   //overflow-y: hidden;
 }
 
-.post-feed {
+.post-feed,
+.block-after {
   position: relative;
   &::after {
     content: '';
@@ -74,7 +75,7 @@ pre {
   transition: all .7s ease-in-out;
   &:focus {outline: none;}
   .icon-bar {
-    background-color: $black;
+    background-color: $primary;
     transform: rotate(0deg) translate(0px, 0px);
     transition: ease all .2s;
     display: block;
@@ -87,6 +88,7 @@ pre {
 
 .site-nav-mobile-wrapper {
   background-color: $Nightshade;
+  border-left: 1px solid $NightshadeOutline;
   color: $white;
   position: fixed;
   max-width: 100%;

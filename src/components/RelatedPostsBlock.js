@@ -3,28 +3,27 @@ import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import { getPostsFromQuery } from '../utils/blog'
 import { includes, orderBy } from 'lodash'
-import { Link } from 'gatsby'
+import { PostItem } from '../components/common'
 
 // Related posts based on:
 // https://khalilstemmler.com/articles/gatsby-related-posts-component/
 // Adaopted for Ghost
 
-const RelatedPosts = ({ posts }) => (
-  <div className="read-first-wrapper">
-    <section className="read-first post-feed mb-5 pb-5 px-4 py-5 px-md-5">
-      <h6 className="h5 text-uppercase text-green mb-5">Read More:</h6>
-      <ul className="list-unstyled read-first-list">
-        {posts.map(({ article }) => (
-          <li key={article.slug}>
-            <h5 className="text-uppercase h5">
-              <Link to={`/${article.slug}/`}>{article.title}</Link>
-            </h5>
-          </li>
-        ))}
-      </ul>
-    </section>
-  </div>
-)
+const RelatedPosts = ({ posts }) => {
+  console.log(posts)
+  return (
+    <div className="related-wrapper pb-5 block-after">
+      <section className="realated-posts px-0 py-5">
+        <h6 className="h5 text-uppercase text-green mb-4">Read More</h6>
+        <nav className="read-first-list">
+          {posts.map(({ article }) => (
+            <PostItem key={article.id} post={article} />
+          ))}
+        </nav>
+      </section>
+    </div>
+  )
+}
 
 class RelatedPostsFactory {
   constructor(articles, currentArticleSlug) {

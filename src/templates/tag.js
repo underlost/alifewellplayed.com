@@ -21,9 +21,9 @@ const Tag = ({ data, location, pageContext }) => {
       <Layout>
         <header className="tag-header mb-5 pb-5 px-4 py-5 px-md-5">
           <h1 className="h2 mb-4">{tag.name}</h1>
-          {tag.description ? <p className="h3 mb-0 font-weight-normal">{tag.description}</p> : null}
+          {tag.description ? <p className="mb-0 fw-normal">{tag.description}</p> : null}
         </header>
-        <div className="container pt-5">
+        <div className="container px-3 px-md-5 pt-5">
           <section className="post-feed">
             {posts.map(({ node }) => (
               // The tag below includes the markup for each post - components/common/PostCard.js

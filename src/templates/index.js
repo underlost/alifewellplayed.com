@@ -22,7 +22,7 @@ const Index = ({ data, location, pageContext }) => {
       <Layout isHome={true}>
         <>
           {pageContext.humanPageNumber === 1 && <ReadFirstBlock />}
-          <div className="container pt-5">
+          <div className="container px-3 px-md-5 pt-5">
             <section className="post-feed">
               {posts.map(({ node }) => (
                 // The tag below includes the markup for each post - components/common/PostCard.js

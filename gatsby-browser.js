@@ -1,4 +1,7 @@
 /* eslint-disable */
+
+import "prismjs/themes/prism-solarizedlight.css";
+
 /**
  * Trust All Scripts
  *
@@ -9,9 +12,6 @@
  * via ids/classnames etc.
  *
  */
-
- require("prismjs/themes/prism-solarizedlight.css")
-
 var trustAllScripts = function () {
     var scriptNodes = document.querySelectorAll('.load-external-scripts script');
 
@@ -30,6 +30,6 @@ var trustAllScripts = function () {
     }
 };
 
-exports.onRouteUpdate = function () {
+export function onRouteUpdate () {
     trustAllScripts();
-};
+}

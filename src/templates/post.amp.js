@@ -15,7 +15,7 @@ import dayjs from 'dayjs'
  * This file renders a single post and loads all the content.
  *
  */
-const Post = ({ data, location }) => {
+const PostAMP = ({ data, location }) => {
   const post = data.ghostPost
   const readingTime = readingTimeHelper(post)
   const publishedAt = dayjs(post.published_at).format(`MMM D, YYYY`)
@@ -48,36 +48,30 @@ const Post = ({ data, location }) => {
             </header>
             {/* The main post content */}
             <section className="content-body load-external-scripts mb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
-            <footer className="post-footer">
+            <footer className="post-footer row no-gutters">
               {post.tags && (
                 <div className="post-byline-item post-card-tags h6 text-uppercase mb-1 d-inline-block">
                   in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} />
                 </div>
               )}
 
-              <time className="post-byline-item d-block h6 text-uppercase sr-only" dateTime={post.updated_at}>
-                Last Updated: {updatedAt}
-              </time>
-
+              <div className="post-card-footer-right col-12">
+                <small className="post-byline-item h6 text-uppercase d-block sr-only">By: {post.primary_author.name}</small>
+                <time className="post-byline-item d-block h6 text-uppercase sr-only" dateTime={post.updated_at}>
+                  Last Updated: {updatedAt}
+                </time>
+              </div>
             </footer>
           </article>
 
           <RelatedPostsBlock tags={post.tags} currentArticleSlug={post.slug} />
-
-          <div className="about-author">
-            <h6 className="h5 text-uppercase text-green mb-4">About the Author</h6>
-            <div className="post-card-author">
-              <h6 className="post-byline-item h6 text-uppercase d-block mb-1">{post.primary_author.name}</h6>
-              <p className="fs-6">{post.primary_author.bio}</p>
-            </div>
-          </div>
         </div>
       </Layout>
     </>
   )
 }
 
-Post.propTypes = {
+PostAMP.propTypes = {
   data: PropTypes.shape({
     ghostPost: PropTypes.shape({
       codeinjection_styles: PropTypes.object,
@@ -99,9 +93,9 @@ Post.propTypes = {
   location: PropTypes.object.isRequired,
 }
 
-export default Post
+export default PostAMP
 
-export const postQuery = graphql`
+export const postAMPQuery = graphql`
   query($slug: String!) {
     ghostPost(slug: { eq: $slug }) {
       ...GhostPostFields

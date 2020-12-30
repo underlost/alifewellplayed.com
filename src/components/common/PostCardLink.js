@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
+import ReactMarkdown from 'react-markdown'
 
 const PostCardLink = ({ post }) => {
   const url = `/${post.slug}/`
@@ -25,7 +26,9 @@ const PostCardLink = ({ post }) => {
 
       </header>
 
-      <section className="post-card-excerpt" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <section className="post-card-excerpt">
+        <ReactMarkdown>{post.excerpt}</ReactMarkdown>
+      </section>
 
       <footer className="post-card-footer sr-only">
         {post.tags && <div className="post-card-tags h6 text-uppercase mb-1">Posted in: <Tags post={post} visibility="public" autolink={false} /></div>}

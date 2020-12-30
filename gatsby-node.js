@@ -246,6 +246,15 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: node.slug,
       },
     })
+
+    //create AMP versions of each page
+    createPage({
+      path: `/${node.slug}/amp/`,
+      component: path.resolve(`./src/templates/post.amp.js`),
+      context: {
+        slug: node.slug,
+      },
+    })
   })
 
   notes.forEach(({ node }) => {
