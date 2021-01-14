@@ -16,12 +16,6 @@ const PostCardLink = ({ post }) => {
         {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
         <h2 className="post-card-title h5 text-uppercase"><Link className="post-card-link d-inline" to={url}>{post.title}</Link></h2>
 
-        {post.feature_image &&
-          <Link className="post-card-image d-block" to={url} style={{
-            backgroundImage: `url(${post.feature_image})` ,
-          }}></Link>
-        }
-
         {post.featured && <span className="h6 text-uppercase mb-1 text-orange sr-only">Featured</span>}
 
       </header>

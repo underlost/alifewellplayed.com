@@ -13,7 +13,7 @@ import { Link } from 'gatsby'
 *
 */
 const Navigation = ({ data, navClass }) => (
-  <ul className={`list-inline`}>
+  <ul className={`list-inline pe-3`}>
     {data.map((navItem, i) => {
       if (navItem.url.match(/^\s?http(s?)/gi)) {
         return <li key={i} className="site-nav-item-wrapper list-inline-item"><a className={navClass} href={navItem.url} target="_blank" rel="noopener noreferrer">{navItem.label}</a></li>
