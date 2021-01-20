@@ -182,11 +182,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require(`sass`),
-        precision: 6,
-        includePaths: [`${__dirname}/src/sass/site.scss`],
-        sourceComments: false,
-        sourceMap: false,
+        sassOptions: {
+          includePaths: [`${__dirname}/src/sass/site.scss`],
+          precision: 6,
+          sourceComments: false,
+          sourceMap: false,
+        },
       },
     },
     `gatsby-plugin-catch-links`,
@@ -283,7 +284,7 @@ module.exports = {
           },
         },
         canonicalBaseUrl: `https://alifewellplayed.com`,
-        components: [`amp-form`],
+        components: [],
         excludedPaths: [`/404*`, `/`],
         pathIdentifier: `/amp/`,
         relAmpHtmlPattern: `{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}`,
