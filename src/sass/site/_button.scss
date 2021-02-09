@@ -13,10 +13,10 @@
     width: 100%;
     height: 10px;
     z-index: -1;
-    background-color: $NightshadeOutline;
+    background-color: darken($latte, 15%);
   }
   &:hover {
-    color: $secondary;
+    color: $primary;
     text-decoration: none;
     &::after {
       height: 15px;

@@ -12,7 +12,7 @@ import { PostItem } from '../components/common'
 const RelatedPosts = ({ posts }) => (
   <div className="related-wrapper pb-5 block-after">
     <section className="realated-posts px-0 py-5">
-      <h6 className="h5 text-uppercase text-green mb-4">Read More</h6>
+      <h6 className="h5 text-uppercase text-orange mb-4">Read More</h6>
       <nav className="read-first-list">
         {posts.map(({ article }) => (
           <PostItem key={article.id} post={article} />

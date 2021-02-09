@@ -10,7 +10,7 @@ const PostCardLink = ({ post }) => {
   const readingTime = readingTimeHelper(post)
 
   return (
-    <article className="post-card post-card-linked py-lg-3 mb-5">
+    <article className="post-card post-card-linked py-lg-3 mb-4">
       <header className="post-card-header">
 
         {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}

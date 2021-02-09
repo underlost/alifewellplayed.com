@@ -12,7 +12,7 @@ const PostCardArticle = ({ post }) => {
   const postExcept = md.render(post.excerpt)
 
   return (
-    <article className="post-card post-card-article py-lg-3 mb-5">
+    <article className="post-card post-card-article py-lg-3 mb-4">
       <header className="post-card-header">
 
         {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}

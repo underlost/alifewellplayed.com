@@ -37,7 +37,7 @@ const PostAMP = ({ data, location }) => {
             ) : null}
             <header>
               {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
-              <h1 className="content-title h1 mb-3 text-purple">{post.title}</h1>
+              <h1 className="content-title h1 mb-3 text-primary">{post.title}</h1>
               <div className="post-meta mb-5">
                 <time className="post-byline-item d-inline-block h6 text-uppercase pe-5" dateTime={post.published_at}>
                   <span className="sr-only">Published on </span>

@@ -15,7 +15,7 @@ const AsideCard = ({ post }) => {
   //const updatedAt = dayjs(post.updated_at).format(`MMM D, YYYY`)
 
   return (
-    <aside className="aside-card py-lg-3 mb-5">
+    <aside className="aside-card py-lg-3 mb-4">
       <header className="post-card-header">
         {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
         {post.feature_image &&

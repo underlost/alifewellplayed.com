@@ -3,10 +3,8 @@
 
 .tag-header {
   position: relative;
-  background-color: $Nightshade;
-  border-style: solid;
-  border-color: $NightshadeOutline;
-  border-width: 1px 1px 1px 0;
+  background-color: $latte;
+  border: 1px solid darken($latte, 15%);
   h1 {
     margin: 0 0 1rem 0;
   }

@@ -44,7 +44,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             {/* The main header section on top of the screen */}
             <header className="site-head mx-auto mt-3">
 
-              <div className="toggle-wrapper d-lg-none">
+              <div className="toggle-wrapper">
                 <button type="button" className="btn navbar-toggler" onClick={toggleMenu}>
                   <span className={`icon-bar top-bar`} />
                   <span className={`icon-bar middle-bar`} />
@@ -54,7 +54,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 </button>
               </div>
 
-              <MobileNavigation data={site.navigation} navClass="site-nav-item" />
+              <MobileNavigation data={site.navigation} navClass="site-nav-item py-2" />
 
               <div className="container px-3 px-md-5">
                 <div className="site-mast">
@@ -62,12 +62,6 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <Link className="site-brand d-block" to="/">
                       <SvgLogo />
                     </Link>
-                  </div>
-                  <div className="site-mast-nav d-none d-lg-block mt-lg-5">
-                    <nav className="site-nav text-md-right mb-4 mr-0">
-                      {/* The navigation items as setup in Ghost */}
-                      <Navigation data={site.navigation} navClass="site-nav-item" />
-                    </nav>
                   </div>
                 </div>
                 { isHome ?
@@ -94,13 +88,14 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                   <Navigation data={site.navigation} navClass="site-footer-nav-item" />
                 </div>
                 <div className="site-footer-nav">
-                  <Link to="/">{site.title}</Link> © 2020
+                  <Link to="/">{site.title}</Link> © 2021
                 </div>
               </div>
             </footer>
 
           </div>
         </div>
+        <div className="page-bottom" />
       </div>
     </>
   )

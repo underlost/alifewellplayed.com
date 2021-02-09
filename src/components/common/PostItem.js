@@ -11,8 +11,8 @@ const PostItem = ({ post }) => {
     <article className="post-item mb-2">
       <header className="post-item-header">
         <Link to={url}>
-          <h3 className="h5 text-uppercase d-inline-block mb-0">{post.title}</h3>
-          <span className="h6 text-uppercase ps-2 mb-0">{readingTime}</span>
+          <h3 className="h5 text-uppercase d-inline mb-0">{post.title}</h3>
+          <span className="h6 text-uppercase d-inline ps-2 mb-0">{readingTime}</span>
         </Link>
       </header>
     </article>

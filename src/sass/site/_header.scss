@@ -25,15 +25,22 @@
         right: 0;
         height: 8px;
         width: 125%;
-        background-color: $NightshadeOutline;
+        background-color: $primary;
       }
     }
   }
   .site-brand {
     margin-left: 0px;
+    .logoTitle,
+    .pixelHeart {
+      transition: all .5s ease-in-out;
+    }
     &:hover {
       .logoTitle {
-        fill: $Nightshade;
+        fill: $primary;
+      }
+      .pixelHeart {
+        fill: $secondary;
       }
     }
   }

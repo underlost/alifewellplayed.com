@@ -1,7 +1,7 @@
 .kg-bookmark-card {
   width: 100%;
-  border: 1px solid $NightshadeOutline;
-  background-color: $Nightshade;
+  border: 1px solid darken($latte, 15%);
+  background-color: $latte;
 }
 .kg-bookmark-container {
   //padding: 2rem 0;
@@ -45,14 +45,16 @@
   }
 
   .kg-bookmark-metadata {
-    font-family: $font-family-sans-serif;
-    font-size: 0.95rem;
-    font-weight: normal;
+    font-family: $headings-font-family;
+    font-size: .9rem;
+    font-weight: bold;
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     margin-top: 5px;
+    color: $green;
+    text-transform: uppercase;
   }
 
   .kg-bookmark-icon {
@@ -62,11 +64,14 @@
   }
 
   .kg-bookmark-publisher {
-    overflow: hidden;
+    //overflow: hidden;
     max-width: 240px;
     white-space: nowrap;
     display: block;
     line-height: 1.65em;
+  }
+  .kg-bookmark-author~.kg-bookmark-publisher {
+    padding-left: 1rem;
   }
 
   .kg-bookmark-description {
