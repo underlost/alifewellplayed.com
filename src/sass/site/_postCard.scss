@@ -104,13 +104,22 @@
   width: 26px;
 }
 
+.kg-card-hascaption {
+  img {
+    margin-bottom: .75rem;
+  }
+  figcaption {
+    font-size: 1rem;
+  }
+}
+
 @media (min-width: 500px) {
   .post-feature-image {
     margin-left: -200px;
     margin-right: -200px;
   }
 
-  .kg-image-card {
+  .post-card .kg-image-card {
     margin-left: -200px;
     margin-right: -200px;
   }

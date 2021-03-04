@@ -18,10 +18,6 @@ const AsideCard = ({ post }) => {
     <aside className="aside-card py-lg-3 mb-4">
       <header className="post-card-header">
         {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
-        {post.feature_image &&
-          <div className="post-card-image" style={{
-            backgroundImage: `url(${post.feature_image})` ,
-          }}></div>}
       </header>
       <section className="content-body load-external-scripts mb-1" dangerouslySetInnerHTML={{ __html: post.html }} />
       <footer className="post-card-footer mt-0">
