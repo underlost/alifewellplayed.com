@@ -28,15 +28,6 @@ pre {
   margin: auto;
 }
 
-.site-nav-icon {
-    height: 15px;
-    margin: -5px 0 0;
-}
-
-.site-logo {
-  height: 25px;
-}
-
 .post-feed-wrapper,
 .post-feed {
   margin-right: auto;
@@ -80,9 +71,13 @@ pre {
     transition: ease all .2s;
     display: block;
     width: 28px;
-    height: 2px;
+    height: 4px;
     border-radius: 1px;
     margin: 5px -4px;
+  }
+  .bottom-bar {
+    width: 20px;
+    margin-left: auto;
   }
 }
 
@@ -132,18 +127,18 @@ pre {
     //transform: translateX(-420px);
     .icon-bar{
       transition: ease all .3s;
-      margin: 5px 0;
+      margin: 6px 0;
     }
     .icon-bar:nth-child(1) {
       transform: rotate(45deg) translateX(0px);
       transform-origin: bottom left;
     }
-    .icon-bar:nth-child(2),
-    .icon-bar:nth-child(3) {opacity: 0;}
+    .icon-bar:nth-child(2) {opacity: 0;}
 
-    .icon-bar:nth-child(4) {
+    .icon-bar:nth-child(3) {
       transform: rotate(-45deg) translateX(0px);
       transform-origin: top left;
+      width: 28px;
     }
     &:hover {
       .icon-bar {
