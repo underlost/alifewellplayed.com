@@ -7,6 +7,16 @@
     //color: rgba(255, 255, 255, 0.7);
     font-size: .85rem;
     //background: var(--color-base);
+
+    .nav {
+      list-style: none;
+      li {
+        display: inline-block;
+        font-size: .9rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
+      }
+    }
 }
 
 .site-footer-nav {

@@ -28,27 +28,24 @@ const Post = ({ data, location }) => {
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
       <Layout>
-        <div className="container px-3 px-md-5 py-5">
-          <article className="content pb-5">
-            {post.feature_image ? (
-              <figure className="post-feature-image">
-                <img className="w-100" src={post.feature_image} alt={post.title} />
-              </figure>
-            ) : null}
-            <header>
-              {post.primary_tag && <p className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</p>}
+        <div className="pb-5">
+          <article className="content">
+            <header className="gh-header gh-canvas">
+              {post.feature_image ? <img className="gh-feature-image" src={post.feature_image} alt={post.title} /> : null}
+
+              {post.primary_tag && <span className="post-card-tags h6 text-uppercase mb-1">{post.primary_tag.name}</span>}
               <h1 className="content-title h1 mb-3 text-primary">{post.title}</h1>
               <div className="post-meta mb-5">
                 <time className="post-byline-item d-inline-block h6 text-uppercase pe-5" dateTime={post.published_at}>
                   <span className="sr-only">Published on </span>
                   {publishedAt}
                 </time>
-                <p className="h6 text-uppercase d-inline-block mb-1 pe-4">{readingTime}</p>
+                <span className="h6 text-uppercase d-inline-block mb-1 pe-4">{readingTime}</span>
               </div>
             </header>
             {/* The main post content */}
-            <section className="content-body load-external-scripts mb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
-            <footer className="post-footer">
+            <section className="gh-content gh-canvas content-body load-external-scripts mb-4" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <footer className="post-footer gh-canvas">
               {post.tags && (
                 <div className="post-byline-item post-card-tags h6 text-uppercase mb-1 d-inline-block">
                   in <Tags post={post} permalink={`/tag/:slug`} visibility="public" autolink={true} />
@@ -61,13 +58,15 @@ const Post = ({ data, location }) => {
             </footer>
           </article>
 
-          <RelatedPostsBlock tags={post.tags} currentArticleSlug={post.slug} />
+          <div className="gh-canvas">
+            <RelatedPostsBlock tags={post.tags} currentArticleSlug={post.slug} />
 
-          <div className="about-author">
-            <h6 className="h5 text-uppercase text-green mb-4">About the Author</h6>
-            <div className="post-card-author">
-              <h6 className="post-byline-item h6 text-uppercase d-block mb-1">{post.primary_author.name}</h6>
-              <p className="fs-6">{post.primary_author.bio}</p>
+            <div className="about-author">
+              <h6 className="h5 text-uppercase text-green mb-4">About the Author</h6>
+              <div className="post-card-author">
+                <h6 className="post-byline-item h6 text-uppercase d-block mb-1">{post.primary_author.name}</h6>
+                <p className="fs-6">{post.primary_author.bio}</p>
+              </div>
             </div>
           </div>
         </div>

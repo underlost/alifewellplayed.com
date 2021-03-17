@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { Navigation } from '.'
-import { MobileNavigation } from '.'
 // import config from '../../utils/siteConfig'
 
 //CSS
@@ -49,7 +48,7 @@ const MicroLayout = ({ data, children, bodyClass }) => {
                 </button>
               </div>
 
-              <MobileNavigation data={site.navigation} navClass="site-nav-item py-2" />
+              <Navigation data={site.navigation} navClass="site-nav-item py-2" />
 
               <div className="container px-3 px-md-5">
                 <div className="site-mast pt-5">

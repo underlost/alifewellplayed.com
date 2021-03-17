@@ -22,7 +22,7 @@ const Page = ({ data, location }) => {
         <style type="text/css">{`${page.codeinjection_styles}`}</style>
       </Helmet>
       <Layout>
-        <div className="container px-3 px-md-5 pt-5">
+        <div className="gh-content gh-canvas py-5">
           <article className="content">
             <h1 className="content-title h2">{page.title}</h1>
 

@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import SvgLogo from '../Logo'
 import { Navigation } from '.'
-import { MobileNavigation } from '.'
 // import config from '../../utils/siteConfig'
 
 //CSS
@@ -53,7 +52,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 </button>
               </div>
 
-              <MobileNavigation data={site.navigation} navClass="site-nav-item py-2" />
+              <Navigation data={site.navigation} navClass="site-nav-item py-2" />
 
               <div className="container px-3 px-md-5">
                 <div className="site-mast">
@@ -81,9 +80,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             {/* The footer at the very bottom of the screen */}
             <footer className="site-footer text-uppercase">
               <div className="site-footer-nav container px-0">
-                <div className="site-footer-nav">
-                  <Navigation data={site.navigation} navClass="site-footer-nav-item" />
-                </div>
+                <Navigation data={site.navigation} navClass="site-footer-nav-item" />
                 <div className="site-footer-nav">
                   <Link to="/">{site.title}</Link> © 2021
                 </div>
